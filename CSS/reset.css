@@ -64,6 +64,10 @@ h3 {
   font-size: var(--font-mb-h3);
 }
 
+h4 {
+  font-size: var(--font-mb-h4);
+}
+
 p {
   margin-top: 0;
   font-size: var(--font-mb-text);
@@ -97,7 +101,7 @@ textarea, select {
   font-size: inherit;
 }
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 992px){
 
   h1 {
     font-size: var(--font-pc-h1);
@@ -107,6 +111,9 @@ textarea, select {
   }
   h3 {
     font-size: var(--font-pc-h3);
+  }
+  h4 {
+    font-size: var(--font-pc-h4);
   }
   p {
     font-size: var(--font-pc-text);

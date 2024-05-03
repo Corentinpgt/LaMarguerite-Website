@@ -1,0 +1,17 @@
+.accueil__h1 {
+    margin-top: 5rem;
+    text-align: center;
+    color: var(--purple);
+}
+
+.nous {
+    margin-top: 5rem;
+}
+
+
+@media screen and (min-width: 992px){
+    .accueil__h1 {
+        margin-top: 10rem;
+    }
+    
+}

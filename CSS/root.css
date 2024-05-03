@@ -9,6 +9,8 @@
     --pink : rgb(231, 134, 181);
     --green : rgb(149, 193, 31);
 
+    --purple-opacity : rgb(121, 50, 130, 0.99);
+
     --background-purple : mix(white, var(--purple), 3%);
     --background-orange : mix(white, var(--orange), 3%);
     --background-yellow : mix(white, var(--yellow), 3%);
@@ -26,6 +28,7 @@
     --font-pc-h1 : 4rem;
     --font-pc-h2 : 2.25rem;
     --font-pc-h3 : 1.875rem;
+    --font-pc-h4 : 1rem;
     --font-pc-text : 1.25rem;
     --font-pc-btn : 1.25rem;
     --font-pc-nav : 1.25rem;
@@ -33,6 +36,7 @@
     --font-mb-h1 : 2rem;
     --font-mb-h2 : 1.25rem;
     --font-mb-h3 : 1rem;
+    --font-mb-h4 : .750rem;
     --font-mb-text : .875rem;
     --font-mb-btn : .875rem;
     --font-mb-nav : .875rem;
@@ -55,7 +59,7 @@
 }
 
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 992px){
     .button {
         padding: 1rem 1.5rem;
 

@@ -1,63 +1,53 @@
-.lightMission {
+.lightMission li {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin: 0 auto;
-    width: 22rem;
-}
-
-.lightMission h2{
-    text-align: center;
-    color: var(--purple);
+    flex-direction: row;
+    gap: .5rem;
 }
 
 .lightMission ul{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    margin-bottom: 0;
 }
 
-.lightMission li{
-    display: flex;
-    gap: .5rem;
-    align-items: center;
+.lightMission h2 {
+    color: var(--purple);
+
 }
 
-.lightMission__prevention {
+.lightMission__row {
+    gap: 2rem;
+}
+
+.lightMission__bigCard {
     position: relative;
-    padding: 2rem;
-    height: 33rem;
     overflow: hidden;
-    border-radius: .5rem;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2); 
+    height: 30rem;
 }
 
-.lightMission__preventionHaute {
+.lightMission__bigCardHaut {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    height: 40%;
+}
+
+.lightMission__bigCardHaut button {
+    align-self: flex-start;
 }
 
 .lightMission__carrousel {
     position: absolute;
+    height: 50%;
     width: 100%;
     left: 0;
     bottom: 0;
-    /* margin-top: 2rem; */
-}
-
-.lightMission__carrouselImage {
-    display: none;
-}
-
-.lightMission__carrouselImage:first-child {
-    display: block;
+    margin-top: 2rem;
 }
 
 .lightMission__controls {
     position: absolute;
     bottom: 1rem;
     left: calc(50% - 2rem);
+    right: calc(50% - 2rem);
     display: flex;
     gap: .5rem;
     margin: .5rem auto 0;
@@ -75,134 +65,39 @@
     border: none;
 }
 
-.lightMission__controlsBtn:hover {
-    cursor: pointer;
+.lightMission__smallCards {
+    gap: 2rem;
 }
 
 .lightMission__smallCard {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 2rem;
+    height: 15rem;
 }
 
-.lightMission__aidant {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    border-radius: .5rem;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);   
+.lightMission__smallCard button {
+    align-self: flex-start;
 }
 
-.lightMission__innovation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    border-radius: .5rem;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);    
-}
+@media screen and (min-width: 992px) {
+    .lightMission__row {
+        gap: 0;
+    }
 
-@media screen and (min-width: 600px) {
-    .lightMission {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 2rem;
-        width: 80rem;
-    }
-    
-    .lightMission h2{
-        margin-top: 0;
-        text-align: left;
-    }
-    
-    .lightMission ul{
-        gap: 1rem;
-    }
-    
-    .lightMission li{
-        gap: .5rem;
-        align-items: start;
-    }
-    
-    .lightMission__prevention {
-        position: relative;
-        padding: 2rem;
-        width: 60rem;
-        height: 50rem;
-        overflow: hidden;
-        border-radius: .5rem;
-        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2); 
-    }
-    
-    .lightMission__preventionHaute {
-        align-items: start;
-        justify-content: space-between;
-        height: 20rem;
-    }
-    
-    .lightMission__carrousel {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        bottom: 0;
-        /* margin-top: 2rem; */
-    }
-    
-    .lightMission__carrouselImage {
-        display: none;
-    }
-    
-    .lightMission__carrouselImage:first-child {
-        display: block;
-    }
-    
-    .lightMission__controls {
-        position: absolute;
-        bottom: 1rem;
-        left: calc(50% - 2rem);
-        display: flex;
-        gap: .5rem;
-        margin: .5rem auto 0;
-        padding: .5rem;
-        width: 4rem;
-        background-color: rgba(255,255,255,0.5);
-        border-radius: 5rem;
-    
-    }
-    
-    .lightMission__controlsBtn {
-        padding: .32rem;
-        background-color: var(--purple);
-        border-radius: 5rem;
-        border: none;
-    }
-    
-    .lightMission__controlsBtn:hover {
-        cursor: pointer;
+    .lightMission__bigCard {
+        height: 42rem;
     }
 
     .lightMission__smallCard {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 0;
+        height: 20rem;
     }
     
-    .lightMission__aidant {
-        align-items: start;
-        justify-content: space-between;
-        padding: 2rem;
-        width: 40rem;
-        height: 24rem;
-    }
-    
-    .lightMission__innovation {
-        align-items: start;
-        justify-content: space-between;
-        padding: 2rem;
-        width: 40rem;
-        height: 24rem;  
+}
+
+
+@media screen and (min-width: 1500px){
+    .lightMission {
+        max-width: 1500px;
     }
 }

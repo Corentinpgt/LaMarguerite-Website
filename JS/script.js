@@ -1,46 +1,33 @@
-// Carrousel Light Mission
+// Parteners carousel
 
-let index = 0;
-const images = document.querySelectorAll('.lightMission__carrouselImage');
-const buttons = document.querySelectorAll('.lightMission__controlsBtn');
-
-setInterval(() => {
-    images[index].style.display = 'none';
-    index = (index + 1) % images.length;
-    images[index].style.display = 'block';
-}, 6000);
-
-buttons.forEach((button, buttonIndex) => {
-    button.addEventListener('click', () => {
-        images[index].style.display = 'none';
-        index = buttonIndex;
-        images[index].style.display = 'block';
+$(document).ready(function(){
+    $("#carouselExample").owlCarousel({
+        items: 3,
+        loop: true,
+        margin: 10,
+        dots : false,
+        nav: true,
+        navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
+        slideBy: 1, // Nombre d'items à déplacer lors de la navigation
+        autoplay: true, // Active le défilement automatique
+        autoplayTimeout: 2000, // Définit le délai de défilement automatique à 2 secondes
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 3
+            }
+        }
     });
 });
 
+// Header change when scrolling
 
-// Carrousel Partenaires Footer
-
-var index2 = 0;
-var images2 = document.querySelectorAll('.carousel__images img');
-var prevButton = document.querySelector('.carousel__button--prev');
-var nextButton = document.querySelector('.carousel__button--next');
-
-function showImage(i) {
-    images2.forEach(img => img.style.transform = 'translateX(-' + i * 100 + '%)');
-}
-
-prevButton.addEventListener('click', function() {
-    index2 = (index2 - 1 + images2.length) % images2.length;
-    showImage(index2);
+window.addEventListener('scroll', function() {
+    var header = document.querySelector('.header');
+    header.classList.toggle('sticky', window.scrollY > 0);
 });
-
-nextButton.addEventListener('click', function() {
-    index2 = (index2 + 1) % images2.length;
-    showImage(index2);
-});
-
-setInterval(function() {
-    index2 = (index2 + 1) % images2.length;
-    showImage(index2);
-}, 5000);
