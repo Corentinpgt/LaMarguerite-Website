@@ -1,0 +1,31 @@
+.video {
+    padding: 0;
+    border-radius: .5rem;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+    overflow: hidden;
+    height: 20rem;
+}
+
+.video .row {
+    height: 100%;
+}
+
+.video__vid {
+    width: 100%;
+    height: 100%;
+}
+
+
+@media screen and (min-width: 992px){
+    .video {
+        height: 40rem;
+    }
+    
+}
+
+
+@media screen and (min-width: 1500px){
+    .video {
+        max-width: 1500px;
+    }
+}
