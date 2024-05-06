@@ -1,0 +1,160 @@
+.missions__mobile {
+    position: relative;
+    margin-top: 5rem;
+    height: 25rem;
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.missions__mobile h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: .5rem 2rem .5rem 1rem;
+    background-color: var(--green);
+    color: white;
+    border-bottom-right-radius: 50rem;
+}
+
+.missions__mobile .row {
+    height: 100%;
+}
+
+.missions__mobile .col-12 {
+
+}
+
+.missions__mobile ul {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-top: 3rem;
+    z-index: 100;
+}
+
+.missions__mobile img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    z-index: 0;
+    opacity: .5;
+
+}
+
+
+
+
+.missions {
+    display: none;
+
+}
+
+@media screen and (min-width: 992px){
+    .missions__mobile {
+        display: none;
+    }
+
+    .missions {
+        display: block;
+        position: relative;
+        height: 55rem;
+        border-radius: .5rem;
+        background-color: white;
+        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+        overflow: hidden;
+    
+    }
+    
+    .missions .row {
+        height: 100%;
+    
+    }
+    
+    .missions h1{
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1rem 2rem 1rem 0;
+        background-color: var(--green);
+        color: white;
+        border-bottom-right-radius: 50rem;
+    }
+    
+    .missions img{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+    }
+    
+    .missions  .col-12{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .missions__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        margin-left: 2rem;
+    }
+    
+    .missions__content li {
+        width: 60%;
+    }
+    
+    .missions__content :first-child {
+        width: 90%;
+    }
+    
+    .missions__content :nth-child(2) {
+        width: 80%;
+    }
+    
+    .missions__nav {
+        display: flex;
+        position: absolute;
+        bottom: 1rem;
+        left: calc(50% - 23.5rem);
+        gap: .5rem;
+        padding: .25rem;
+        border-radius: 50rem;
+        background-color: var(--green);
+        z-index: 10;
+    }
+    .nav__none {
+        display: none!important;
+    }
+    
+    .missions__nav button {
+        border: none;
+        padding: 1rem 3rem;
+        border-radius: 30rem;
+        background-color: transparent;
+        color: white;
+    }
+    
+    .missions__nav button:hover {
+        transition: all 0.3s ease-in-out;
+        background-color: white;
+        color: var(--green);
+    }
+    
+    .missions-selected {
+        background-color: white!important;
+        color: var(--green)!important;
+    }
+    
+}
+
+
+@media screen and (min-width: 1500px){
+    .missions {
+        max-width: 95%;
+    }
+}

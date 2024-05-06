@@ -16,7 +16,7 @@
     --background-yellow : rgb(255, 253, 247);
     --background-blue : mix(white, var(--blue), 3%);
     --background-pink : mix(white, var(--pink), 3%);
-    --background-green : mix(white, var(--green), 3%);
+    --background-green : rgb(252, 253, 248);
 
     --header-background : var(--purple);
     --header-color : white;
