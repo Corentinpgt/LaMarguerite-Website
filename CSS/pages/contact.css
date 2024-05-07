@@ -1,5 +1,5 @@
 body {
-    background-color: var(--background-green);
+    background-color: var(--background-yellow);
     overflow-x: hidden;
 }
 
@@ -7,6 +7,7 @@ body {
     padding: 7rem 0 ;
     position: relative;
 }
+
 
 
 .bg__top, .bg__bottom {
@@ -26,11 +27,13 @@ body {
     right: calc(50% - 75vw);
 }
 
-
-.missions__h1 {
+.contact__h1 {
     text-align: center;
     color: var(--purple);
 }
+
+
+
 
 
 @media screen and (min-width: 992px){
@@ -40,10 +43,6 @@ body {
 
     .bg__top {
         top: 5rem;
-    }
-
-    .missions {
-        margin-top: 5rem;
     }
     
 }
