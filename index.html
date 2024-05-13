@@ -56,8 +56,22 @@
 
         <!-- Background IMGs -->
     
-            <img class="bg__top" src="Assets/bg-top.svg" alt="Image de fond haut">
-            <img class="bg__bottom" src="Assets/bg-btm.svg" alt="Image de fond bas">
+        <img class="bg__top" src="Assets/bg-top.svg" alt="Image de fond haut">
+        <img class="bg__bottom" src="Assets/bg-btm.svg" alt="Image de fond bas">
+
+    
+        <div class="container notification">
+            <label for="notification_cross">X</label>
+            <input type="checkbox" id="notification_cross">
+            <div class="row">
+                <div class="col">
+                    <div class="notification__inner">
+                        <h2>La Marguerite est en vacances du 1 janvier 2024 au 31 décembre 2024.</h2>
+                        <p>L'année 2023 à été rude, par conséquent La Marguerite se permet une pause d'une toute petite année, afin de reprendre des forces pour pouvoir vous soutenir de son mieux.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     
     
         <h1 class="accueil__h1">La Marguerite - Accueil</h1>
@@ -94,7 +108,9 @@
         <div class="container video">
             <div class="row">
                 <div class="col">
-                    <iframe class="video__vid" src="https://www.youtube.com/embed/x6vDJlOZMas" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="video__inner">
+                        <iframe class="video__vid" src="https://www.youtube.com/embed/x6vDJlOZMas" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -295,6 +311,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <script src="JS/script.js"></script>
+    <script src="JS/pages/accueil.js"></script>
     
 </body>
 </html>

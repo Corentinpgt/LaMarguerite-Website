@@ -1,0 +1,60 @@
+.notification {
+    position: relative;
+    max-height: 50rem;
+    color: white;
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+
+}
+
+.notification__inner {
+    padding: 2rem;  
+    text-align: center;
+    background-color: var(--purple);
+
+}
+
+.notification label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 1rem;
+    z-index: 10;
+}
+
+.notification label:hover {
+    cursor: pointer;
+}
+
+.notification input {
+    display: none;
+}
+
+.notification .col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+@media screen and (min-width: 992px){
+    
+    
+}
+
+
+@media screen and (min-width: 1500px){
+    .notification {
+        min-width: 1500px;
+    }
+
+    .notification label {
+        top: .5rem;
+        right: 1.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+}

@@ -48,6 +48,10 @@ body {
     margin-top: 5rem;
 }
 
+.notification {
+    margin-bottom: 2rem;
+}
+
 
 
 @media screen and (min-width: 992px){
@@ -69,6 +73,9 @@ body {
 
     .bg__top {
         top: 5rem;
+    }
+    .notification {
+        margin-bottom: 5rem;
     }
     
 }

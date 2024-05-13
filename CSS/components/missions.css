@@ -1,6 +1,11 @@
-.missions__mobile {
-    position: relative;
+.missionsmobile {
     margin-top: 5rem;
+
+}
+
+.missionsmobile__inner {
+    position: relative;
+    padding: 0 .5rem;
     height: 25rem;
     border-radius: .5rem;
     background-color: white;
@@ -8,7 +13,7 @@
     overflow: hidden;
 }
 
-.missions__mobile h2 {
+.missionsmobile h2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -18,15 +23,15 @@
     border-bottom-right-radius: 50rem;
 }
 
-.missions__mobile .row {
+.missionsmobile .row {
     height: 100%;
 }
 
-.missions__mobile .col-12 {
+.missionsmobile .col-12 {
 
 }
 
-.missions__mobile ul {
+.missionsmobile ul {
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -34,7 +39,7 @@
     z-index: 100;
 }
 
-.missions__mobile img {
+.missionsmobile img {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -52,8 +57,12 @@
 
 }
 
+.nav__none {
+    display: none!important;
+}
+
 @media screen and (min-width: 992px){
-    .missions__mobile {
+    .missionsmobile {
         display: none;
     }
 
@@ -127,9 +136,7 @@
         background-color: var(--green);
         z-index: 10;
     }
-    .nav__none {
-        display: none!important;
-    }
+
     
     .missions__nav button {
         border: none;

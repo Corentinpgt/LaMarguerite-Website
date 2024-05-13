@@ -33,6 +33,10 @@ body {
 }
 
 
+.contact {
+    margin-top: 5rem;
+}
+
 
 
 
@@ -43,6 +47,10 @@ body {
 
     .bg__top {
         top: 5rem;
+    }
+
+    .contact {
+        margin-top: 10rem;
     }
     
 }
