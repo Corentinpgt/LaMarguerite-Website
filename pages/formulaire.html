@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
     <link rel="stylesheet" href="../main.css">
-    <link rel="stylesheet" href="../CSS/pages/contact.css">
+    <link rel="stylesheet" href="../CSS/pages/formulaire.css">
 
     <link rel="icon" href="../Assets/logo.png">
 
-    <title>La Marguerite - Contact</title>
+    <title>La Marguerite - Formulaire</title>
 </head>
 <body>
 
@@ -61,64 +61,70 @@
             <img class="bg__bottom" src="../Assets/bg-btm.svg" alt="Image de fond bas">
     
     
-        <h1 class="contact__h1">La Marguerite - Nous Contacter</h1>
-    
-    
-    
-        <div class="container contact">
+        <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-5">
-                    <section class="contact__info">
-                        <figure class="contact__coord">
-                            <img src="../Assets/logo.png" alt="Logo La Marguerite">
-                            <figcaption>
-                                <p>La Marguerite Nouvelle-Aquitaine</p>
-                                <p>95 rue Abbé Pierre 87100 Landouge</p>
-                                <p>Mail : contact@lamargueriteasso&#8203;.fr</p>
-                                <p>Tel : 05 55 01 35 94</p>
-                            </figcaption>
-                        </figure>
-                        <div class="contact__map">
-                            <iframe
-                            style="border:0"
-                            loading="lazy"
-                            allowfullscreen
-                            referrerpolicy="no-referrer-when-downgrade"
-                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDZTP4VF6P-z8LScYkfh5iv-iFbsUIxsUE&q=La+Marguerite,Limoges">
-                          </iframe>
-                        </div>
-                    </section>
-                </div>
-                <div class="col-12 offset-lg-1 col-lg-6">
-                    <form class="contact__form">
-                        <h2>Nous contacter</h2>
-                        <ul>
-                            <li>
-                                <label for="firstName">Prénom</label>
-                                <input type="text" id="firstName" name="firstName">
-                            </li>
-                            <li>
-                                <label for="lastName">Nom</label>
-                                <input type="text" id="lastName" name="lastName">
-                            </li>
-                            <li>
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email">
-                            </li>
-                            <li>
-                                <label for="phone">Téléphone</label>
-                                <input type="tel" id="phone" name="phone">
-                            </li>
-                            <li>
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="4" cols="50"></textarea>
-                            </li>
-                        </ul>
-                        <input class="contact__btn button" type="submit" value="Envoyer">
-                    </form>
+                <div class="col">
+                    <div class="form">
+                        <section class="form__header">
+                            <img src="../Assets/logo.png" alt="Logo de La Marguerite">
+                            <h2>Formulaire d'adhésion</h1>
+                        </section>
+
+                        <section class="form__content">
+                            <ul class="form__type">
+                                <li>Je suis :</li>
+                                <li>
+                                    <label for="asso">Une association</label>
+                                    <input type="checkbox" name="asso" id="check_asso">
+                                </li>
+                                <li>
+                                    <label for="asso">Un particulier</label>
+                                    <input type="checkbox" name="particulier" id="check_particulier">
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>
+
+
+
+        <template id="template_asso_1step">
+            <ul class="form__type">
+                <li>Je suis :</li>
+                <li>
+                    <label for="asso">Une association</label>
+                    <input type="checkbox" name="asso" id="check_asso" checked>
+                </li>
+                <li>
+                    <label for="asso">Un particulier</label>
+                    <input type="checkbox" name="particulier" id="check_particulier">
+                </li>
+            </ul>
+            <ul>
+                <li><label for="nom_asso">Nom de l'association :</label> <input id="nom_asso" class="required" type="text"></li>
+                <li><label for="adresse_asso">Adresse :</label> <input id="adresse_asso" class="required" type="text"></li>
+                <li></li>
+                <li><label for="nom_president">President :</label> <input id="nom_president" class="required" type="text"></li>
+                <li><label for="mail_president">Mail :</label> <input id="mail_president" class="required" type="mail"></li>
+                <li><label for="tel_president">Tel :</label> <input id="tel_president" class="required" type="text"></li>
+                <li></li>
+                <li><label for="nom_contact">Autre contact :</label> <input id="nom_contact" type="text"></li>
+                <li><label for="fonction_contact">Fonction :</label> <input id="fonction_contact" type="text"></li>
+                <li><label for="mail_contact">Mail :</label> <input id="mail_contact" type="text"></li>
+                <li><label for="tel_contact">Tel :</label> <input id="tel_contact" type="text"></li>
+            </ul>
+
+            <button class="form__next" id="asso_1step">></button>
+        </template>
+
+
+
+
+
+
+
 
 
     </main>
@@ -201,6 +207,7 @@
 
 
     <script src="../JS/script.js"></script>
+    <script src="../JS/pages/formulaire.js"></script>
     
 </body>
 </html>

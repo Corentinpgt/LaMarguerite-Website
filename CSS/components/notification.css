@@ -8,16 +8,20 @@
 }
 
 .notification__inner {
-    padding: 2rem;  
+    padding: 2rem 1rem;  
     text-align: center;
     background-color: var(--purple);
 
 }
 
+.notification__inner h2 {
+    margin-bottom: 1rem;
+}
+
 .notification label {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 1rem;
     padding: .25rem;
     width: 1.5rem;
     height: 1.5rem;
@@ -41,7 +45,16 @@
 
 
 @media screen and (min-width: 992px){
+    .notification__inner {
+        padding: 5rem 2rem;  
+        text-align: center;
+        background-color: var(--purple);
     
+    }
+    
+    .notification__inner h2 {
+        margin-bottom: 2rem;
+    }
     
 }
 

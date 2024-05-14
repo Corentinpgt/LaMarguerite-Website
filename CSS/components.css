@@ -10,3 +10,8 @@
 @import 'components/news.css';
 @import 'components/searchnews.css';
 @import 'components/searchwork.css';
+@import 'components/workcard.css';
+@import 'components/workregister.css';
+@import 'components/workcontainer.css';
+@import 'components/membership.css';
+@import 'components/donation.css';

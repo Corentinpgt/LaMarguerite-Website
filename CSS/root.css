@@ -15,8 +15,10 @@
     --background-orange : mix(white, var(--orange), 3%);
     --background-yellow : rgb(255, 253, 247);
     --background-blue : mix(white, var(--blue), 3%);
-    --background-pink : mix(white, var(--pink), 3%);
+    --background-pink : rgb(254, 251, 253);
     --background-green : rgb(252, 253, 248);
+
+    --purple-dark : color-mix(in srgb, var(--purple) 100%, black 20%);
 
     --header-background : var(--purple);
     --header-color : white;
@@ -50,12 +52,12 @@
     border: none;
     border-radius: 20rem;
     border-bottom-left-radius: 0;
+    transition: all .3s ease-in-out;
 }
 
 .button:hover {
-    background-color: var(--yellow);
+    background-color: var(--purple-dark);
     cursor: pointer;
-    text-decoration: underline;
 }
 
 

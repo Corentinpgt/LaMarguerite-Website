@@ -27,20 +27,16 @@ body {
     right: calc(50% - 75vw);
 }
 
-.ateliers__h1 {
+.adhesions__h1 {
     text-align: center;
     color: var(--purple);
 }
 
-.workregister {
+.membership {
     margin-top: 5rem;
 }
 
-.searchwork {
-    margin-top: 5rem;
-}
-
-.workcontainer {
+.donation {
     margin-top: 5rem;
 }
 
@@ -55,9 +51,12 @@ body {
         top: 5rem;
     }
 
-    .searchwork {
+    .membership {
         margin-top: 10rem;
     }
-
+    
+    .donation {
+        margin-top: 10rem;
+    }
     
 }
