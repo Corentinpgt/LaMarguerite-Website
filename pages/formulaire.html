@@ -67,7 +67,8 @@
                     <div class="form">
                         <section class="form__header">
                             <img src="../Assets/logo.png" alt="Logo de La Marguerite">
-                            <h2>Formulaire d'adhésion</h1>
+                            <h2>Formulaire d'adhésion</h2>
+                            <h4 class="form__alert"></h4>
                         </section>
 
                         <section class="form__content">
@@ -79,7 +80,7 @@
                                 </li>
                                 <li>
                                     <label for="asso">Un particulier</label>
-                                    <input type="checkbox" name="particulier" id="check_particulier">
+                                    <input type="checkbox" name="parti" id="check_parti">
                                 </li>
                             </ul>
                         </section>
@@ -88,6 +89,10 @@
             </div>
         </div>
 
+
+
+
+        <!-- Templates Association -->
 
 
         <template id="template_asso_1step">
@@ -99,29 +104,141 @@
                 </li>
                 <li>
                     <label for="asso">Un particulier</label>
-                    <input type="checkbox" name="particulier" id="check_particulier">
+                    <input type="checkbox" name="parti" id="check_parti">
                 </li>
             </ul>
-            <ul>
-                <li><label for="nom_asso">Nom de l'association :</label> <input id="nom_asso" class="required" type="text"></li>
-                <li><label for="adresse_asso">Adresse :</label> <input id="adresse_asso" class="required" type="text"></li>
-                <li></li>
-                <li><label for="nom_president">President :</label> <input id="nom_president" class="required" type="text"></li>
-                <li><label for="mail_president">Mail :</label> <input id="mail_president" class="required" type="mail"></li>
-                <li><label for="tel_president">Tel :</label> <input id="tel_president" class="required" type="text"></li>
-                <li></li>
-                <li><label for="nom_contact">Autre contact :</label> <input id="nom_contact" type="text"></li>
-                <li><label for="fonction_contact">Fonction :</label> <input id="fonction_contact" type="text"></li>
-                <li><label for="mail_contact">Mail :</label> <input id="mail_contact" type="text"></li>
-                <li><label for="tel_contact">Tel :</label> <input id="tel_contact" type="text"></li>
+            <ul class="form__info">
+                <li><label for="name_asso">Nom de l'association* :</label> <input id="name_asso" class="required" type="text"></li>
+                <li><label for="address_asso">Adresse* :</label> <input id="address_asso" class="required" type="text"></li>
+
+                <li><label for="name_president">President* :</label> <input id="name_president" class="required" type="text"></li>
+                <li><label for="mail_president">Mail* :</label> <input id="mail_president" class="required" type="email"></li>
+                <li><label for="tel_president">Tel* :</label> <input id="tel_president" class="required" type="tel"></li>
+
+                <li><label for="name_contact">Autre contact :</label> <input id="name_contact" type="text"></li>
+                <li><label for="position_contact">Fonction :</label> <input id="position_contact" type="text"></li>
+                <li><label for="mail_contact">Mail :</label> <input id="mail_contact" type="email"></li>
+                <li><label for="tel_contact">Tel :</label> <input id="tel_contact" type="tel"></li>
             </ul>
 
-            <button class="form__next" id="asso_1step">></button>
+            <button class="form__next">></button>
+        </template>
+
+        <template id="template_asso_finalStep">
+            <p>Votre demande d'adhésion nous a bien été transmise !</p>
+            <p>Afin de valider définitivement votre adhésion à La Marguerite, merci de bien vouloir régler le montant nécessaire, d’un mininmum de 40€, soit :</p>
+            <ul class="form__buy">
+                <li><img src="/Assets/dot-li.svg" alt="icon de style de liste">Par chèque bancaire à l’ordre de la Marguerite.</li>
+                <li><img src="/Assets/dot-li.svg" alt="icon de style de liste">Par virement : RIB - FR76 1090 7002 6546 0218 1051 083 ; BIC - CCBPFRPPBDX</li>
+                <li><img src="/Assets/dot-li.svg" alt="icon de style de liste">En espèce, au sein de l'association.</li>
+            </ul>
         </template>
 
 
 
 
+
+
+        <!-- Templates Individuals -->
+
+
+        <template id="template_parti_1step">
+            <ul class="form__type">
+                <li>Je suis :</li>
+                <li>
+                    <label for="asso">Une association</label>
+                    <input type="checkbox" name="asso" id="check_asso">
+                </li>
+                <li>
+                    <label for="asso">Un particulier</label>
+                    <input type="checkbox" name="particulier" id="check_particulier" checked>
+                </li>
+            </ul>
+            <ul class="form__info">
+                <li><label for="name_individual">Nom/Prénom* :</label> <input id="name_individual" class="required" type="text"></li>
+                <li><label for="birth_individual">Date de naissance* :</label> <input id="birth_individual" class="required" type="date"></li>
+                <li><label for="address_individual">Adresse* :</label> <input id="address_individual" class="required" type="text"></li>
+                <li><label for="mail_individual">Mail* :</label> <input id="mail_individual" class="required" type="mail"></li>
+                <li><label for="tel_individual">Tel* :</label> <input id="tel_individual" class="required" type="text"></li>
+                <li><label for="job_individual">Profession* :</label> <input id="job_individual" class="required" type="text"></li>
+
+            </ul>
+
+            <button class="form__next">></button>
+        </template>
+
+
+        <template id="template_parti_2step">
+            <section class="form__law">
+                <ul class="form__img">
+                    <li class="form__li__redCheck">Veuillez sélectionner une option</li>
+                    <li><p>Droit à l'image</p></li>
+                    <li><input type="checkbox" class="imglaw_checkbox1">Autorise</li>
+                    <li><input type="checkbox" class="imglaw_checkbox2">N'autorise pas</li>
+                </ul>
+
+                <ul class="form__rgpd">
+                    <li>
+                        <p>La prise de photographies et vidos lors des activités et manifestation organisée par La Marguerite ou dont elle est partenaire dans les locaux et à l’occasion de manifestation en d’autres espaces.</p>
+                    </li>
+                    <li>
+                        <p>A des fins d’illustration sur divers supports de communication : plaquettes, affiches, flyers...</p>
+                    </li>
+                    <li>
+                        <p>Sans limite de durée.</p>
+                    </li>
+                </ul>
+
+            </section>
+
+            <p>Cette autorisation pourra être révoquée à tout moment sur demande écrite de l’intéressé(e). Je reconnais avoir pris connaissance des dispositions ci-dessus concernant les données informatiques (RGPD) et je déclare les accepter.</p>
+
+            <ul class="form__nav">
+                <li><button class="form__prev"><</button></li>
+                <li><button class="form__next">></button></li>
+            </ul>
+        </template>
+
+
+        <template id="template_parti_3step">
+
+            <p>Dispense de cotisation</p>
+
+            <label for="">Je suis déjà adhérent(e) d’une association partenaire :</label>
+            <select name="adherents" id="members_select">
+                <option value="" disabled selected hidden>Sélectionnez une association</option>
+                <option value="1">Asso 1</option>
+                <option value="2">Asso 2</option>
+                <option value="3">Asso 3</option>
+                <option value="4">Asso 4</option>
+            </select>
+
+
+            
+            <ul class="form__nav">
+                <li><button class="form__prev"><</button></li>
+                <li><button class="form__mid">Je ne possède pas de dispense de cotisation</button></li>
+                <li><button class="form__next">></button></li>
+            </ul>
+            
+        </template>
+
+
+
+        <template id="template_parti_endText">
+            <p>Votre demande d'adhésion nous a bien été transmise ! <br>Nous vous recontacterons dans les plus brefs délais.</p>
+        </template>
+
+
+        <template id="template_parti_finalStep">
+            <p>Votre demande d'adhésion nous a bien été transmise !</p>
+            <p>Afin de valider définitivement votre adhésion à La Marguerite, merci de bien vouloir régler le montant nécessaire, d’un mininmum de 35€, soit :</p>
+            <ul class="form__buy">
+                <li><img src="/Assets/dot-li.svg" alt="icon de style de liste">Par chèque bancaire à l’ordre de la Marguerite.</li>
+                <li><img src="/Assets/dot-li.svg" alt="icon de style de liste">Par virement : RIB - FR76 1090 7002 6546 0218 1051 083 ; BIC - CCBPFRPPBDX</li>
+                <li><img src="/Assets/dot-li.svg" alt="icon de style de liste">En espèce, au sein de l'association.</li>
+            </ul>
+        </template>
 
 
 
