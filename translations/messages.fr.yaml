@@ -1,0 +1,345 @@
+# php bin/console debug:translation fr
+
+login.please.sing.in : Please sign in
+
+email.address : Adresse email
+email : Email
+password : Mot de passe
+password.repeat : Répéter le mot de passe
+
+sign.in : Sign in
+sign.out : Sign out
+logout : Déconnexion
+
+cancel : Annuler
+validate : Valider
+
+confirm.delete : Merci de confirmer l\'opération de suppression
+
+none.provided : Aucun
+
+website : Site internet
+
+#----------------------------------------------------------------------
+# Common : Begin
+
+dashboard : Tableau de bord
+title : Titre
+subtitle : Soustitre
+total : Total
+nb : Total
+firstname : Prénom
+lastname : Nom
+roles : Rôles
+name : Nom
+various : Various
+info : Info
+creation.date : Date de création
+publish.date : Date de publication
+date : Date
+
+view : Voir
+edit : Modifier
+delete : Supprimer
+
+value : Valeur
+
+details : Détails
+
+export : Export
+import : Import
+
+# Common : End
+#----------------------------------------------------------------------
+
+
+#----------------------------------------------------------------------
+# Page : Begin
+
+home_page : Accueil
+missions_page: Missions
+adherent_page: Adhérents
+workshop_page : Ateliers
+news_page : Actualités
+membership_page : Adhésion
+membership_asso_page : Ahsésion Association
+membership_indi_page : Adhésion Particulier
+contact_page: Contact
+
+
+# Page : End
+#----------------------------------------------------------------------
+
+#----------------------------------------------------------------------
+# Blog : Begin
+
+blog: Actualité
+blogs: Actualités
+
+article: Actualité
+articles: Actualités
+
+blog.article.edit : "Modification de l'actualité : "
+blog.article.add : Créer une actualité
+
+publish: Publier
+unpublish: Dépublier
+isPublished?: Etat de publication
+published: Publié 
+unpublished: Non Publié 
+eventDate : Date de l'événement
+body : Texte
+
+onFacebook.true : Publié !
+
+author: Auteur
+
+facebook: Facebook
+
+# Blog : End
+#----------------------------------------------------------------------
+
+#----------------------------------------------------------------------
+# Partner : Begin
+
+partner: Partenaire
+partner.add: Ajouter un partenaire
+partner.edit: Modifier le partenaire
+partners: Partenaires
+url : Url
+img : Image
+
+
+
+# Partner : End
+#----------------------------------------------------------------------
+
+
+#----------------------------------------------------------------------
+# Contact : Begin
+
+contact: Contact
+date_creation: Date de création
+message: Message
+
+isDone?: Etat
+done: Fait
+to_do: A faire
+valid : Valider
+unvalid : Annuler
+
+
+# Contact : End
+#----------------------------------------------------------------------
+
+
+
+#----------------------------------------------------------------------
+# Contributor : Begin
+
+contributor: Prestataire
+contributors: Prestataires
+contributor.add: Ajouter un Prestataire
+contributor.edit: Modifier le Prestataire
+job : Métier
+profile_pic : Image de profil
+mail : Email
+phone : Téléphone
+
+
+
+
+# Contributor : End
+#----------------------------------------------------------------------
+
+#----------------------------------------------------------------------
+# Workshop : Begin
+
+workshop: Atelier
+workshops: Ateliers
+
+workshop.add: Ajouter un atelier
+workshop.edit: Modifier l'atelier
+workshop_category: Catégorie d'atelier
+info_workshop : Informations sur l'atelier
+activity_workshop : Informations sur les activités de l'atelier
+place : Le lieu
+day : Le jour
+hours : Les heures
+
+workshop_cat: Catégorie d'ateliers
+workshop_cats: Catégories d'ateliers
+workshop_cat.add: Ajouter une catégorie d'atelier
+workshop_cat.edit: Modifier la catégorie d'atelier
+workshop_planning : Planning des ateliers
+color : Couleur
+
+
+# Workshop : End
+#----------------------------------------------------------------------
+
+#----------------------------------------------------------------------
+# Access/User : Begin
+
+user: Utilisateur
+users: Utilisateurs
+
+user.add: Ajouter un utilisateur
+user.edit: Modifier l'utilisateur
+
+
+# Access/User : End
+#----------------------------------------------------------------------
+
+#----------------------------------------------------------------------
+# Notification : Begin
+
+notification: Notification
+notifications: Notifications
+notification.add: Ajouter une notification
+notification.edit: Modifier la notification
+date_over : Date de fin
+text : Texte
+
+
+
+
+# Notification : End
+#----------------------------------------------------------------------
+
+
+
+#----------------------------------------------------------------------
+# Membership : Begin
+
+membership: Demande d'adhésion
+memberships: Adhésions
+membership_asso : Demandes Association
+membership_asso.add : Ajout d'une demande d'adhésion
+membership_asso.edit : Modification d'une demande d'adhésion
+membership_indi : Demandes Particulier
+membership_indi.add : Ajout d'une demande d'adhésion
+membership_indi.edit : Modification d'une demande d'adhésion
+
+creation_date: Date de création
+name_asso: Nom de l'association
+address_asso: Adresse de l'association
+name_president: Nom du président
+mail_president : Adresse mail du président
+tel_president : Téléphone du président
+position_contact: Fonction du contact
+name_contact: Nom du contact
+mail_contact : Adresse mail du contact
+tel_contact : Téléphone du contact
+
+name_indi: Nom du particulier
+birthdate : Date de naissance
+address_indi : Addresse du particulier
+tel : Téléphone
+imglaw : Droit à l'image
+asso_membership: Adhérent à l'association
+asso : Association
+
+
+
+bothname : Prénom & Nom
+birthDate : Date de naissance
+address : Adresse
+imgLaw : Droit d'image
+member_asso_membership : Adhérent à une association partenaire
+Y/m/d : (Année/Mois/Jour)
+
+
+# Membership : End
+#----------------------------------------------------------------------
+
+
+
+#----------------------------------------------------------------------
+# Members : Begin
+
+members: Adhérents
+members_asso: Associations Adhérentes
+members_indi: Particuliers Adhérents
+members_asso.add: Ajouter une association adhérente
+members_indi.add: Ajouter un particulier adhérent
+members_asso.edit: Modifier une association adhérente
+members_indi.edit: Modifier un particulier adhérent
+description : Description
+membership_date: Date d'adhésion
+payment : Paiement
+payment_date: Date de paiement
+president_name : Nom du président
+president_email : Email du président
+president_phone : Tel du président
+contact_name : Nom du contact
+contact_job : Position du contact
+contact_email : Email du contact
+contact_phone : Tel du contact
+
+members_of : Adhérent de
+
+
+members_stats : Statistiques
+
+
+
+# Members : End
+#----------------------------------------------------------------------
+
+
+
+#----------------------------------------------------------------------
+# Events : Begin
+
+events: Événements
+event: Événement
+
+event.add: Ajouter un Événement
+event.edit: Modifier un Événement
+
+
+
+
+
+# Events : End
+#----------------------------------------------------------------------
+
+
+
+
+#----------------------------------------------------------------------
+# Projects : Begin
+
+projects: Projets
+project: Projet
+
+project.add: Ajouter un Projet
+project.edit: Modifier un Projet
+
+
+link_label : Intitulé du lien
+link : Lien
+
+
+
+
+# Projects : End
+#----------------------------------------------------------------------
+
+
+
+#----------------------------------------------------------------------
+# Employees : Begin
+
+employees: Employés
+employee: Employé
+
+employee.add: Ajouter un Employee
+employee.edit: Modifier un Employee
+
+
+
+
+# Employees : End
+#----------------------------------------------------------------------
