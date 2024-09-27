@@ -1,0 +1,91 @@
+hr{
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+
+h5 {
+	font-size: 1.25rem !important;
+}
+
+.nolink{
+	color: black !important;
+}
+
+.w-30{
+    width: 30% !important;
+}
+
+.w-70{
+    width: 70% !important;
+}
+
+.max-w-70{
+    max-width: 70% !important;
+}
+
+.w-90{
+    width: 90% !important;
+}
+
+.width-50{
+	width: 50px !important;
+}
+
+.width-75{
+	width: 75px !important;
+}
+
+.width-100{
+	width: 100px !important;
+}
+
+.width-150{
+	width: 150px !important;
+}
+
+.width-200{
+	width: 200px !important;
+}
+
+.width-250{
+	width: 250px !important;
+}
+
+.max-width-250{
+	max-width: 250px !important;
+}
+
+.height-100{
+	height: 100px !important;
+}
+
+.max-height-600{
+	max-height: 600px !important;
+}
+
+/* For those damn datatables */
+.width-99p{
+	width: 99%;
+}
+
+.page-title{
+	display: block;
+}
+
+.page-subtitle{
+}
+
+.card-footer-top-border{
+    border-top: 1px solid rgba(0,0,0,.125);
+}
+
+.mb-30{
+    margin-bottom: 30px;
+}
+
+#uploadPreview{
+    max-width: 300px;
+    max-height: 300px;
+}
+
+

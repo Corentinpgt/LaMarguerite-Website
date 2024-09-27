@@ -1,0 +1,84 @@
+.dashboard__header {
+	display: flex;
+	align-items : center;
+	gap : 2rem;
+	margin-bottom : 2rem;
+}
+
+.dashboard h2 {
+	margin-top : 2rem;
+}
+
+.dashboard h3 {
+	font-size : 1.25rem;
+}
+
+
+
+/* Stats */
+
+.members_stats {
+	margin-top : 2rem;
+	max-width: 95%!important;
+}
+
+.searchbar_nexus {
+	
+}
+
+.searchbar_nexus button{
+	background-color : white;
+	border : 3px solid #007bff;
+	border-left: 3px solid white;
+	border-radius : .3rem;
+}
+
+.searchbar_nexus button:hover{
+	border : 3px solid #007bff;
+
+}
+
+.searchbar_nexus button img{
+
+}
+
+.searchbar_nexus input{
+	background-color : white;
+	border : 3px solid #007bff;
+	border-right: 3px solid white;
+	border-radius : .3rem;
+	outline : none;
+}
+
+.searchbar_nexus input:hover{
+	border : 3px solid #007bff;
+
+}
+
+
+.members_stats_h2 {
+	margin-bottom: 4rem;
+}
+
+
+/* Images */
+
+.images__list div {
+	display : flex;
+	flex-direction: column;
+}
+
+.images__list div h3{
+}
+
+.images__list div img {
+	padding : 2rem;
+	width : 20rem;
+	border : 2px solid black;
+
+}
+
+.images__list div img:hover {
+	cursor : pointer;
+}
+

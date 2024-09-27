@@ -1,0 +1,179 @@
+.form {
+    background-color: white;
+    border-radius: .5rem;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.form__header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--purple);
+}
+
+.form__alert {
+    color: rgb(255, 50, 50);
+}
+
+.form__header h2{
+    color: white;
+}
+
+.form__content {
+    padding: 2rem;
+    /* margin-bottom: 2rem; */
+
+}
+
+.form__type {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.form__type li {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+}
+
+
+.form__content label {
+    margin-bottom: 0;
+}
+
+.form__content input {
+    border: 2px solid var(--purple);
+    outline: none;
+
+}
+
+.form__content select {
+    border: 2px solid var(--purple);
+
+}
+
+.form__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.form__law {
+    display: flex;
+    align-items: center;
+    height: 10rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.form__img {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 40%;
+    margin-left: 1rem;
+}
+
+.form__rgpd {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    border-left: 2px solid var(--purple);
+    padding-left: 1rem;
+
+}
+
+.form__nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.form__nav button {
+    background-color: var(--purple);
+    color: white;
+    padding: .7rem 1rem;
+    border: none;
+    border-radius: 10rem;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+}
+
+.form__nav button:hover {
+    background-color: var(--purple-dark);
+}
+
+.form__mid {
+    color: var(--purple)!important;
+    background-color: transparent!important;
+    text-decoration: underline;
+    transition: all .3s ease-in-out;
+
+}
+
+.form__mid:hover {
+    background-color: color-mix(in srgb, var(--purple) 10%, white 90%)!important;
+}
+
+.form__next {
+    background-color: var(--purple);
+    color: white;
+    padding: .7rem 1rem;
+    border: none;
+    border-radius: 10rem;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+}
+
+.form__next:hover {
+    background-color: var(--purple-dark);
+}
+
+
+.form__buy {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0 0 2rem;
+}
+
+.form__buy li {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+}
+
+.form__li__redCheck {
+    display: none;
+    font-style: italic;
+    color: red;
+    text-decoration: underline wavy red;
+}
+
+.form__priseContact{
+	margin-top : 2rem;
+}
+
+.form__priseContact p{
+	text-align : center;
+	font-size : 1rem;
+}
+
+.form__legal p {
+	font-size : .8rem;
+	text-align : center;
+}
+
+.form__legal a {
+	text-decoration : underline;
+}

@@ -1,0 +1,179 @@
+.workcard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    /* width: 22rem; */
+    background-color: white;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+    border-radius: .5rem;
+    overflow: hidden;
+
+}
+
+
+.workcard__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.workcard__header div{
+	width: 5rem;
+	height: 5rem;
+	background-color: blue;
+	border-radius: 50rem;
+    border-bottom-right-radius: 0;
+    border: 5px solid var(--green);
+
+}
+
+.workcard__header img{
+    width: 5rem;
+	height: 5rem;
+	object-fit: cover;
+    border-radius: 50rem;
+    border-bottom-right-radius: 0;
+    border: 5px solid var(--green);
+}
+
+.workcard__header ul {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-bottom: 0;
+
+}
+
+.workcard__header ul li {
+
+}
+
+.workcard__header ul li:first-child {
+    color: var(--green);
+    text-transform: uppercase;
+}
+
+.workcard__header ul li:last-child {
+}
+
+.workcard__header h3 {
+    position: absolute;
+    top: 2rem;
+    right: -2.3rem;
+    padding: .5rem 1rem;
+	width: 6.5rem;
+    transform: rotate(90deg);
+    color: white;
+	text-align: center;
+    background-color: var(--green);
+}
+
+
+
+
+.workcard__activity {
+    margin: .8rem;
+    padding: .2rem;
+    border-left: 3px solid var(--green);
+}
+
+.workcard__activity h3 {
+    color: var(--green);
+}
+
+.workcard__activity p {}
+
+
+
+
+.workcard__content {
+    margin: .8rem;
+    padding: .2rem;
+}
+
+.workcard__content h3 {
+    color: var(--green);
+
+}
+
+.workcard__content p {}
+
+
+
+
+.workcard__info {
+    padding: 1rem;
+    background-color: var(--green);
+}
+
+.workcard__info h3 {
+    color: white;
+	text-decoration : underline;
+}
+
+.workcard__info p {
+	color: white;
+}
+
+
+
+
+
+@media screen and (min-width: 768px){
+    .workcard {
+        height: 30rem;
+
+    }
+
+    
+}
+
+
+@media screen and (min-width: 1200px){
+    .workcard {
+        height: 65rem;
+
+    }
+
+	.workcard__header div{
+		width: 7rem;
+		height: 7rem;
+	
+	}
+	
+    
+    .workcard__header img{
+        width: 7rem;
+		height: 7rem
+    }
+
+    .workcard__header ul {
+        gap: 1rem;
+    }
+
+    
+    .workcard__header h3 {
+        position: absolute;
+        font-size: 1.5rem;
+        top: 3rem;
+        right: -3.4rem;
+        padding: 1rem 1.5rem;
+		width: 10rem;
+        transform: rotate(90deg);
+        color: white;
+        background-color: var(--green);
+    }
+}
+
+@media screen and (min-width: 1300px){
+    .workcard {
+        height: 55rem;
+
+    }
+
+    
+}

@@ -1,0 +1,89 @@
+.testiCard {
+    position: relative;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    width: 20rem;
+    height: 18rem;
+    border-radius: .5rem;
+    background: url('/website/Assets/testibg.png') no-repeat center/cover;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+
+}
+
+.testiCard h2 {
+    margin-top: .5rem;
+    font-family: "Offside", sans-serif;
+}
+
+.testiCard p {
+    margin-top: .5rem;
+    font-weight: 600;
+}
+
+.testiCard__haut {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    z-index: 0;
+
+}
+
+.testiCard__bas {
+    position: absolute;
+    bottom: .5rem;
+    right: .5rem;
+    z-index: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none;
+}
+
+.carousel-control-prev-icon:after,
+.carousel-control-next-icon:after {
+  content: '▶';
+  font-size: 2rem;
+  color: var(--purple);
+}
+
+.carousel-control-prev-icon:after {
+  content: '◀';
+}
+
+/* .carousel-control-prev {
+    left: 1rem;
+}
+.carousel-control-next {
+    right: 1rem;
+} */
+
+
+@media screen and (min-width: 768px){
+
+	.testiCard {
+        padding: 5rem 2rem;
+        width: 35rem;
+        height: 20rem;
+
+    }
+
+    .testiCard__haut {
+        top: 2rem;
+        left: 2rem;
+    
+    }
+    
+    .testiCard__bas {
+        bottom: 2rem;
+        right: 2rem;
+    }
+}
+
+
+@media screen and (min-width: 1200px){
+    .testiCard {
+        height: 30rem;
+
+    }
+}

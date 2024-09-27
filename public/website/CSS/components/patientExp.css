@@ -1,0 +1,111 @@
+.patientExp {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.patientExp__title {
+	/* color : var(--blue); */
+}
+
+.patientExp__up {
+	padding: 2rem;
+	max-width: 100%;
+	background-color: white;
+	border-radius: .25rem;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+
+}
+
+.patientExp__img{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+
+}
+
+.patientExp__up img{
+	width: 15rem;
+}
+
+.patientExp__up h2 {
+	margin-top: 2rem;
+	margin-bottom: .5rem;
+	color: var(--purple);
+	text-align: center;
+
+}
+
+.patientExp__up p {
+	text-align : justify;
+
+}
+
+.patientExp__down {
+	padding: 2rem;
+	max-width: 100%;
+	background-color: white;
+	border-radius: .25rem;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+}
+
+.patientExp__down h2 {
+	margin-bottom: .5rem;
+	color: var(--purple);
+	text-align: center;
+}
+
+.patientExp__down p {
+	text-align : justify;
+}
+
+.patientExp__down a {
+	text-decoration : underline;
+	color : var(--green);
+}
+
+.patientExp__down a:hover {
+	text-decoration : none;
+}
+
+.patientExp__down iframe {
+	margin-top: 2rem;
+	width: 100%;
+}
+
+.patientExp__caption {
+	font-weight: 700;
+	text-align : center!important;
+	font-style : italic;
+}
+
+
+@media screen and (min-width: 768px){
+
+    
+}
+
+@media screen and (min-width: 992px){
+	.patientExp__up h2 {
+		margin-top: 0;
+		text-align: start;
+	}
+
+	.patientExp__down h2 {
+		text-align: start;
+	}
+
+	.patientExp__down iframe {
+		margin-top: 0;
+		height: 70%;
+	}
+    
+}
+
+
+@media screen and (min-width: 1500px){
+    .patientExp {
+        max-width: 1500px;
+    }
+}

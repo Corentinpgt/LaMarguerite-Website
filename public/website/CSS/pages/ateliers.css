@@ -1,0 +1,81 @@
+body {
+    background-color: var(--background-pink);
+    overflow-x: hidden;
+}
+
+.main {
+    padding: 7rem 0 ;
+    position: relative;
+}
+
+
+
+.bg__top, .bg__bottom {
+    position: absolute;
+    max-width: 150vw;
+    object-fit: fill;
+    z-index: -10;
+}
+
+.bg__top {
+    top: 2.5rem;
+    right: 0;
+}
+
+.bg__bottom {
+    bottom: 0;
+    right: calc(50% - 75vw);
+}
+
+.ateliers__h1 {
+    text-align: center;
+    color: var(--purple);
+}
+
+.workregister {
+    margin-top: 5rem;
+}
+
+.searchwork {
+    margin-top: 5rem;
+}
+
+.workcontainer {
+    margin-top: 5rem;
+}
+
+
+
+@media screen and (min-width: 768px){
+    .main {
+        padding-top: 8rem;
+    }
+
+    .bg__top {
+        top: 2rem;
+    }
+
+    .searchwork {
+        margin-top: 5rem;
+    }
+
+    
+}
+
+
+
+@media screen and (min-width: 1200px){
+    .main {
+        padding-top: 15rem;
+    }
+
+    .bg__top {
+        top: 5rem;
+    }
+
+    .searchwork {
+        margin-top: 10rem;
+    }
+
+    
+}

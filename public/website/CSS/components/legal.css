@@ -1,0 +1,34 @@
+.legal__inner {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: .25rem;
+	border-left : 5px solid var(--purple-opacity);
+}
+
+.legal h2 {
+    color: var(--purple);
+    margin-bottom: 1rem;
+}
+
+.legal section {
+    margin-bottom: 2rem;
+}
+
+.legal p {
+    margin-bottom: 2rem;
+	font-size : 1rem;
+}
+
+.legal ul {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    margin-bottom: 2rem;
+}
+
+
+@media screen and (min-width: 1500px){
+    .legal {
+        max-width: 1500px;
+    }
+}

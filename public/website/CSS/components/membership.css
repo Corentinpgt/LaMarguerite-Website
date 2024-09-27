@@ -1,0 +1,147 @@
+.membership {
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+    border-radius: .5rem;
+}
+
+.membership__visual {
+    margin-bottom: 2rem;
+}
+
+.membership__visual img {
+    margin: 0 auto;
+    width: 15rem;
+}
+
+.membership__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.membership__content h2 {
+    color: var(--purple);
+    text-align: center;
+}
+
+.membership__content p {
+    text-align: justify;
+    
+
+}
+
+.membership__link {
+	display : flex;
+	flex-direction : column;
+	gap: 1rem;
+	padding : 1rem 2rem;
+	background-color : var(--background-yellow);
+	border-radius : .5rem;
+	box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+}
+
+.membership__link h3{
+	text-align : center;
+	color : var(--purple);
+}
+
+.membership__btns {
+	display: flex;
+	gap : .5rem;
+}
+
+.membership__btns button {
+}
+
+.membership__btns a:last-child button{
+	border-radius : 20rem;
+	border-bottom-right-radius: 0;
+}
+
+.membership__content button {}
+
+
+@media screen and (min-width: 768px){
+
+    .membership {
+        padding: 4rem 2rem;
+    }
+
+    .membership__visual {
+        margin-bottom: 0;
+    }
+
+    .membership__visual img {
+        margin: auto;
+        width: 20rem;
+    }
+
+    .membership__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 1rem;
+        height: 100%;
+        margin-left: 2rem;
+
+    }
+
+    .membership__content h2 {
+		margin-top: 4rem;
+        text-align: center;
+    }
+
+    .membership__content p {
+        width: 80%;
+        text-align: center;
+
+    }
+}
+
+
+
+@media screen and (min-width: 1200px){
+
+    .membership {
+        padding: 4rem 2rem;
+    }
+
+    .membership__visual {
+        margin-bottom: 0;
+    }
+
+    .membership__visual img {
+        margin: auto;
+        width: 30rem;
+    }
+
+    .membership__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        gap: 0;
+        height: 100%;
+        margin-left: 2rem;
+
+    }
+
+    .membership__content h2 {
+		margin-top : 0;
+        text-align: start;
+    }
+
+    .membership__content p {
+        text-align: justify;
+        width: 80%;
+    }
+}
+
+
+@media screen and (min-width: 1500px){
+    .membership {
+        min-width: 1500px;
+    }
+}

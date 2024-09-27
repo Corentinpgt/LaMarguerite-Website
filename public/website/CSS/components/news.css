@@ -1,0 +1,86 @@
+.news {
+}
+
+.news__inner {
+    position: relative;
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.news__inner h3 {
+    font-family: 'Offside', sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: .5rem 1rem;
+    color: white;
+    background-color: var(--green);
+    border-bottom-right-radius: 50rem;
+
+}
+
+.news__inner section {
+    display: flex;
+    width: 100%;
+    height: 10rem;
+}
+
+.news__inner section img {
+    flex: 1 1 auto;
+    min-width: 33.33%;
+    object-fit: cover;
+}
+
+.news__inner figcaption {
+    display: flex;
+    gap: .5rem;
+    padding: 1rem;
+}
+
+.news__inner figcaption img {
+    width: 5rem;
+    height: 5rem;
+}
+
+.news__content {
+	display : flex;
+	flex-direction: column;
+	height: 100%
+}
+
+.news__content h2{
+	color: var(--purple);
+}
+
+
+@media screen and (min-width: 768px){
+    .news__inner section {
+    }
+    .news__inner h3{
+    }
+	.news__inner figcaption {
+	}
+}
+
+
+@media screen and (min-width: 1200px){
+    .news__inner section {
+        height: 20rem;
+    }
+    .news__inner h3{
+        padding: 1rem 2rem;
+    }
+	.news__inner figcaption {
+		gap: 1rem
+	}
+}
+
+
+@media screen and (min-width: 1500px){
+    .news {
+        min-width: 1500px;
+    }
+    
+}
