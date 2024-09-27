@@ -1,0 +1,59 @@
+{# templates/contact/dashboard.html.twig #}
+
+{% extends 'backoffice/base/base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ 'contact' | trans }}{% endblock %}
+
+{% block body %}
+
+<div class="row">
+	<div class="col">
+
+		<div class="card card-warning card-outline">
+
+			<div class="card-header">
+				<h3 class="card-title">{{ 'contact' | trans }}</h3>
+
+			</div>
+
+			<div class="card-body">
+				<div class="row">
+					<div class="col">
+						{{ include('backoffice/contact/table.html.twig') }}
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+$(document).ready(function(){
+	var colDone = 0;
+	var colDate = 1;
+	var colName = 2;
+	var colName2 = 3;
+	var colMail = 4;
+	var colAction = 5;
+
+	var table = $('#dt_contact').DataTable({
+		"paging" : true,
+		"info" : true,
+		"searching": true,
+		"responsive": true,
+		"pageLength": 100,
+		"order": [[colDone, 'asc'], [colDate, 'desc']],
+		"columnDefs":[
+			{ "targets": colAction, "orderable": false }
+		]
+	});
+});
+</script>
+{% endblock %}

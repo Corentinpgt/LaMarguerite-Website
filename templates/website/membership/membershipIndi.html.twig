@@ -1,0 +1,193 @@
+{# templates/website/membership/membershipIndi.html.twig #}
+{% extends "website/base.html.twig" %}
+
+{% block title %}Adhésions Particulier{% endblock %}
+{% block body %}
+
+
+
+<div class="container form__membership">
+	<div class="row">
+		<div class="col">
+			<div class="form">
+				<section class="form__header">
+					<img src="/website/Assets/logo.png" alt="Logo de La Marguerite">
+					<h2>Formulaire d'adhésion</h2>
+					<h4 class="form__alert"></h4>
+				</section>
+
+				<section class="form__content">
+					
+					{{ form_start(form) }}
+					{{ form_errors(form) }}
+
+					{# Add.Mode #}
+
+
+					<div class="row form-group">
+						<label class="col-md-2 col-form-label required">
+							{{ 'bothname' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+						</label>
+						<div class="col-md-10">{{ form_widget(form.name) }}</div>
+						<div class="form_errors col-md-10 offset-md-2">
+							{{ form_errors(form.name) }}
+						</div>
+					</div>
+
+					<div class="row form-group">
+						<label class="col-md-2 col-form-label required">
+							{{ 'birthDate' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+						</label>
+						<div class="col-md-10">{{ form_widget(form.birthDate) }}</div>
+						<div class="form_errors col-md-10 offset-md-2">
+							{{ form_errors(form.birthDate) }}
+						</div>
+					</div>
+
+					<div class="row form-group">
+						<label class="col-md-2 col-form-label required">
+							{{ 'address' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+						</label>
+						<div class="col-md-10">{{ form_widget(form.address) }}</div>
+						<div class="form_errors col-md-10 offset-md-2">
+							{{ form_errors(form.address) }}
+						</div>
+					</div>
+
+					<div class="row form-group">
+						<label class="col-md-2 col-form-label required">
+							{{ 'mail' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+						</label>
+						<div class="col-md-10">{{ form_widget(form.mail) }}</div>
+						<div class="form_errors col-md-10 offset-md-2">
+							{{ form_errors(form.mail) }}
+						</div>
+					</div>
+
+					<div class="row form-group">
+						<label class="col-md-2 col-form-label required">
+							{{ 'tel' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+						</label>
+						<div class="col-md-10">{{ form_widget(form.tel) }}</div>
+						<div class="form_errors col-md-10 offset-md-2">
+							{{ form_errors(form.tel) }}
+						</div>
+					</div>
+
+					<div class="row form-group">
+						<label class="col-md-2 col-form-label ">
+							{{ 'job' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+						</label>
+						<div class="col-md-10">{{ form_widget(form.job) }}</div>
+						<div class="form_errors col-md-10 offset-md-2">
+							{{ form_errors(form.job) }}
+						</div>
+					</div>
+
+					<hr>
+
+					<div class="row form-group">
+						<label class="col-md-2 col-form-label ">
+							{{ 'imgLaw' | trans }}
+						</label>
+						<div class="col-md-10">{{ form_widget(form.imgLaw) }}</div>
+
+						
+						<div class="form_errors col-md-10 offset-md-2">
+							{{ form_errors(form.imgLaw) }}
+						</div>
+					</div>
+
+					<div class="row form-group imgLaw">
+						<div class="col-8">
+							<ul class="form__rgpd">
+								<li>
+									<p>La prise de photographies et vidéos lors des activités et manifestations organisées par La Marguerite ou dont elle est partenaire dans les locaux et à l’occasion de manifestations en d’autres espaces.</p>
+								</li>
+								<li>
+									<p>A des fins d’illustration sur divers supports de communication : plaquettes, affiches, flyers...</p>
+								</li>
+								<li>
+									<p>Sans limite de durée.</p>
+								</li>
+							</ul>
+						</div>
+						<div class="col-4">
+							<p>Cette autorisation pourra être révoquée à tout moment sur demande écrite de l’intéressé(e). Je reconnais avoir pris connaissance des dispositions ci-dessus concernant les données informatiques (RGPD) et je déclare les accepter.</p>
+						</div>
+					</div>
+					<hr>
+
+					<div class="row form-group">
+						<label class="col-md-2 col-form-label ">
+							{{ 'member_asso_membership' | trans }}
+						</label>
+						<div class="col-md-10">{{ form_widget(form.member_of) }}</div>
+						<div class="form_errors col-md-10 offset-md-2">
+							{{ form_errors(form.member_of) }}
+						</div>
+						<div class="col">
+							<p class="form__asso">
+								Si vous faites partie d'une association partenaire, vous êtes exonéré de cotisation à La Marguerite. Merci de nous faire parvenir une attestation d'adhésion à votre association à l'adresse suivante : contact@lamargueriteasso.fr.
+							</p>
+						</div>
+					</div>
+
+
+					<hr>
+
+
+					<div class="row form-group">
+						<div class="col">
+							<p>Afin de valider votre adhésion à La Marguerite, merci de nous faire parvenir votre règlement d'un montant minimum de 35€. Les cotisations et dons donnent droit à une réduction d'impôt de 66% du montant de la cotisation ou du don. Vous recevrez un reçu fiscal attestant votre cotisation ou don.</p>
+							<ul class="form__buy">
+								<li><img src="/website/Assets/dot-li.svg" alt="icon de style de liste">Par chèque bancaire à l’ordre de la Marguerite.</li>
+								<li><img src="/website/Assets/dot-li.svg" alt="icon de style de liste">Par virement : RIB - FR76 1090 7002 6546 0218 1051 083 ; BIC - CCBPFRPPBDX</li>
+								<li><img src="/website/Assets/dot-li.svg" alt="icon de style de liste">En espèce, directement au siège de l'association</li>
+							</ul>
+						</div>
+					</div>
+
+
+					<hr>
+
+					<div class="row form-group form__legal">
+						<div class="col">
+							<p>
+								En validant ce formulaire, vous attestez être en accord avec notre <a href="{{path('legal')}}">politique RGPD</a>.
+							</p>
+						</div>
+					</div>
+
+
+					<div class="row form-group">
+						<div class="col-12">
+							<div class="btn-group w-100">
+								<input type="submit" class="btn btn-form-validation w-70" value="{{ 'validate' | trans }}" />
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row form-group form__priseContact">
+						<div class="col">
+							<p>
+								Suite à l'envoi de votre formulaire, nous prendrons contact avec vous.
+							</p>
+						</div>
+					</div>
+
+					{{ form_end(form) }}
+
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+{% endblock %}

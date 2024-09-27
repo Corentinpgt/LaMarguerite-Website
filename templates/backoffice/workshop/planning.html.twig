@@ -1,0 +1,38 @@
+{% extends 'backoffice/base/base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ 'workshop' | trans }}{% endblock %}
+
+{% block body %}
+
+
+{{ form_start(form) }}
+{{ form_errors(form) }}
+
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label ">
+		{{ 'workshop_planning' | trans }} (.pdf)&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.document) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.document) }}
+	</div>
+</div>
+
+
+<div class="row form-group">
+	<div class="col-12">
+		<div class="btn-group w-100">
+			<a href="{{ path('workshop_planning_dashboard') }}" class="btn btn-form-cancellation w-30">
+				{{ 'cancel' | trans }}
+			</a>
+			<input type="submit" class="btn btn-form-validation w-70" value="{{ 'validate' | trans }}" />
+		</div>
+	</div>
+</div>
+
+
+{{ form_end(form) }}
+
+
+{% endblock %}

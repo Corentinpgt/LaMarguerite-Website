@@ -1,0 +1,62 @@
+{% extends "website/base.html.twig" %}
+
+{% block title %}Adhésions & Dons{% endblock %}
+
+
+
+
+{% block body %}
+
+
+<div class="container membership">
+	<div class="row">
+		<div class="col-12 col-xl-6">
+			<section class="membership__visual">
+				<img src="website/Assets/adhesion.png" alt="Image d'illustartion d'adhésion">
+			</section>
+		</div>
+
+		<div class="col-12 col-xl-6">
+			<section class="membership__content">
+				<h2>Venez nous rencontrer et devenez bénévole !</h2>
+				<p>Une association ne vit que grâce à des membres impliqués partageant une cause et des valeurs communes. Vous pouvez faire le choix d’agir et devenir acteur du combat contre la maladie en vous engageant ponctuellement ou régulièrement dans la vie du centre associatif.</p>
+				<div class="membership__link">
+					<h3>Rejoignez-nous !</h3>
+					<div class="membership__btns">
+						<a href="{{ path('adhesion_asso') }}"><button class="button">Je suis une Association</button></a>
+						<a href="{{ path('adhesion_indi') }}"><button class="button">Je suis un Particulier</button></a>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+
+
+<div class="container donation">
+	<div class="row flex-row-reverse">
+		<div class="col-12 col-xl-6">
+			<section class="donation__visual">
+				<img src="website/Assets/donation.png" alt="Image d'illustartion de don">
+			</section>
+		</div>
+
+		<div class="col-12 col-xl-6">
+			<section class="donation__content">
+				<h2>Aidez nous grâce à un don !</h2> 
+				<p>Votre soutien peut changer des vies. Chaque contribution, grande ou petite, fait une différence significative. Rejoignez-nous dans notre mission d'apporter du réconfort, de l'espoir et des ressources à ceux qui en ont le plus besoin. Faites un don dès maintenant et faites partie du changement positif que nous pouvons réaliser ensemble.</p>
+				<button class="button"><a href="/contact">Prendre contact</a></button>
+			</section>
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+{% block javascripts %}
+{% endblock %}

@@ -1,0 +1,72 @@
+{# templates/backoffice/project/form.html.twig #}
+
+{{ form_start(form) }}
+{{ form_errors(form) }}
+
+{# Add.Mode #}
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'name' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.name) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.name) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'description' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.description) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.description) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'img' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.img) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.img) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'link_label' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.link_label) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.link_label) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'link' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.link) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.link) }}
+	</div>
+</div>
+
+
+
+<hr>
+
+<div class="row form-group">
+	<div class="col-12">
+		<div class="btn-group w-100">
+			<a href="{{ path('project_dashboard') }}" class="btn btn-form-cancellation w-30">
+				{{ 'cancel' | trans }}
+			</a>
+			<input type="submit" class="btn btn-form-validation w-70" value="{{ 'validate' | trans }}" />
+		</div>
+	</div>
+</div>
+
+{{ form_end(form) }}

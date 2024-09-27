@@ -1,0 +1,64 @@
+{# templates/backoffice/employee/dashboard.html.twig #}
+
+{% extends 'backoffice/base/base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ 'employees' | trans }}{% endblock %}
+
+{% block body %}
+
+<div class="row">
+	<div class="col">
+
+		<div class="card card-warning card-outline">
+
+			<div class="card-header">
+				<h3 class="card-title">{{ 'employee' | trans }}</h3>
+
+				<div class="card-tools">
+
+					<a href="{{ path('employee_add') }}" class="btn btn-tool">
+						<i class="fas fa-plus"></i>
+					</a>
+
+				</div>
+			</div>
+
+			<div class="card-body">
+				<div class="row">
+					<div class="col">
+						{{ include('backoffice/employee/table.html.twig') }}
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+$(document).ready(function(){
+	var colLastName = 0;
+	var colFirstName = 1;
+	var colJob = 2;
+	var colAction = 3;
+
+	var table = $('#dt_employees').DataTable({
+		"paging" : true,
+		"info" : true,
+		"searching": true,
+		"responsive": true,
+		"pageLength": 100,
+		"order": [[colLastName, 'desc'], [colFirstName, 'desc']],
+		"columnDefs":[
+			{ "targets": colAction, "orderable": false }
+		]
+	});
+});
+</script>
+{% endblock %}

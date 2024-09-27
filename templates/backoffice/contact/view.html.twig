@@ -1,0 +1,48 @@
+{% extends 'backoffice/base/base.html.twig' %}
+
+{% block body %}
+
+
+<div class="membership__btns">
+	<a href="{{ path('contact_dashboard')}}">Retour</a>
+	<a onclick="if(confirm('{{ 'confirm.delete' | trans }}')){window.location.href = '{{ path('contact_delete', {'id' : contact.id}) }}'}">Supprimer ce formulaire de contact</a>
+</div>
+
+
+<ul class="membership__uls">
+	<li>
+		<h3>{{'creation_date' | trans }} :</h3>
+		<p>{{contact.dateCreation | date("d/m/Y")}}</p>
+	</li>
+	<li>
+		<h3>{{'firstname' | trans}} :</h3>
+		<p>{{contact.firstname}}</p>
+	</li>
+
+	<li>
+		<h3>{{'lastname' | trans}} :</h3>
+		<p>{{contact.lastname}}</p>
+	</li>
+
+	<li>
+		<h3>{{'email' | trans}} :</h3>
+		<p>{{contact.email}}</p>
+
+	</li>
+
+	<li>
+		<h3>{{'phone' | trans }} :</h3>
+		<p>{{contact.phone}}</p>
+
+	</li>
+
+	<li>
+		<h3>{{'message' | trans }} :</h3>
+		<p>{{contact.message}}</p>
+
+	</li>
+
+</ul>
+
+
+{% endblock %}

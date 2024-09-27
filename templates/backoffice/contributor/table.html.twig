@@ -1,0 +1,35 @@
+{# templates/backoffice/contributor/table.html.twig #}
+
+<div class="table-responsive">
+	<table id="dt_partners" class="table table-striped table-bordered table-hover width-99p">
+		<thead class="thead-dark">
+			<tr>
+				<th>{{ 'firstname' | trans }}</th>
+				<th>{{ 'lastname' | trans }}</th>
+				<th>{{ 'mail' | trans }}</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for cont in contributor %}
+				<tr>
+					<td>{{ cont.firstname }}</td>
+					<td>{{ cont.lastname }}</td>
+					<td>{{ cont.mail }}</td>
+					<td>
+						<div class="{#width-75#} text-right">
+							<a href="{{ path('contributor_edit', {'id' : cont.id}) }}" class="btn btn-sm btn-edit">
+								<i class="far fa-edit"></i>
+							</a>
+
+							<a href="javascript:void(0);" class="btn btn-sm btn-delete"
+								onclick="if(confirm('{{ 'confirm.delete' | trans }}')){window.location.href = '{{ path('contributor_delete', {'id' : cont.id}) }}'}">
+								<i class="fas fa-times"></i>
+							</a>
+						</div>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>

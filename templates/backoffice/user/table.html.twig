@@ -1,0 +1,37 @@
+{# templates/backoffice/user/table.html.twig #}
+
+<div class="table-responsive">
+	<table id="dt_users" class="table table-striped table-bordered table-hover width-99p">
+		<thead class="thead-dark">
+			<tr>
+				<th>{{ 'email' | trans }}</th>
+				<th>{{ 'lastname' | trans }}</th>
+				<th>{{ 'firstname' | trans }}</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for user in users %}
+				<tr>
+					<td>{{ user.email }}</td>
+					<td>{{ user.lastname }}</td>
+					<td>{{ user.firstname }}</td>
+					<td>
+						<div class="{#width-75#} text-right">
+							<a href="{{ path('user_edit', {'id' : user.id}) }}" class="btn btn-sm btn-edit">
+								<i class="far fa-edit"></i>
+							</a>
+							<a href="{{ path('user_edit_password', {'id' : user.id}) }}" class="btn btn-sm btn-edit">
+								<i class="far fa-edit"></i> {{ 'password' | trans }}
+							</a>
+							<a href="javascript:void(0);" class="btn btn-sm btn-delete"
+								onclick="if(confirm('{{ 'confirm.delete' | trans }}')){window.location.href = '{{ path('user_delete', {'id' : user.id}) }}'}">
+								<i class="fas fa-times"></i>
+							</a>
+						</div>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>

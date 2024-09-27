@@ -1,0 +1,80 @@
+{# templates/backoffice/article/form.html.twig #}
+
+{{ form_start(form) }}
+{{ form_errors(form) }}
+
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label">
+		{{ 'eventDate' | trans }}</span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.eventDate) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.eventDate) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'title' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.title) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.title) }}
+	</div>
+</div>
+
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'body' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.body) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.body) }}
+	</div>
+</div>
+
+
+{% if action == 'edit' %}
+<div class="row form-group">
+	<div class="col-12">
+
+		<div class="article__edit-imgs">
+			{% for image in article.images %}
+				<div class="article__edits-img" id="img_{{ image.id }}">
+					<img src="{{ asset(image.getQualityUrlForDisplay(300)) }}">
+					<button type="button" onclick="removeArticleImg('{{image.uuid}}','{{image.id}}')" class="article__edits-btn">X</button>
+				</div>
+			{% endfor %}
+		</div>
+
+	</div>
+</div>
+{% endif %}
+
+
+
+<hr>
+
+{{ include("backoffice/libs_dropzone/dropzone.html.twig") }}
+
+<hr>
+
+
+
+<div class="row form-group">
+	<div class="col-12">
+		<div class="btn-group w-100">
+			<a href="{{ path('article_dashboard') }}" class="btn btn-form-cancellation w-30">
+				{{ 'cancel' | trans }}
+			</a>
+			<button type="button" class="btn btn-form-validation w-70" onclick="submitForm();" id="submitBtn">
+				{{ 'validate' | trans }}
+			</button>
+		</div>
+	</div>
+</div>
+
+{{ form_end(form) }}
+

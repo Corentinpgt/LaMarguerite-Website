@@ -1,0 +1,135 @@
+{# templates/backoffice/members_asso/form.html.twig #}
+
+{{ form_start(form) }}
+{{ form_errors(form) }}
+
+{# Add.Mode #}
+
+
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'name' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.name) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.name) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'membership_date' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.membership_date) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.membership_date) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'payment' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.payment) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.payment) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'payment_date' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.payment_date) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.payment_date) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'birthdate' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.birthdate) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.birthdate) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'address' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.address) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.address) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'email' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.email) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.email) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'phone' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.phone) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.phone) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label ">
+		{{ 'job' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.job) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.job) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label ">
+		{{ 'imgLaw' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.imgLaw) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.imgLaw) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label ">
+		{{ 'members_of' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.members_of) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.members_of) }}
+	</div>
+</div>
+
+
+
+<hr>
+
+<div class="row form-group">
+	<div class="col-12">
+		<div class="btn-group w-100">
+			<a href="{{ path('members_indi_dashboard') }}" class="btn btn-form-cancellation w-30">
+				{{ 'cancel' | trans }}
+			</a>
+			<input type="submit" class="btn btn-form-validation w-70" value="{{ 'validate' | trans }}" />
+		</div>
+	</div>
+</div>
+
+{{ form_end(form) }}

@@ -1,0 +1,61 @@
+{# templates/backoffice/notification/dashboard.html.twig #}
+
+{% extends 'backoffice/base/base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ 'notification' | trans }}{% endblock %}
+
+{% block body %}
+
+<div class="row">
+	<div class="col">
+
+		<div class="card card-warning card-outline">
+
+			<div class="card-header">
+				<h3 class="card-title">{{ 'notification' | trans }}</h3>
+
+				<div class="card-tools">
+
+					<a href="{{ path('notification_add') }}" class="btn btn-tool">
+						<i class="fas fa-plus"></i>
+					</a>
+
+				</div>
+			</div>
+
+			<div class="card-body">
+				<div class="row">
+					<div class="col">
+						{{ include('backoffice/notification/table.html.twig') }}
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+$(document).ready(function(){
+	var colDate = 0;
+	var colTitle = 1;
+	var colAction = 2;
+
+	var table = $('#dt_notifications').DataTable({
+		"paging" : true,
+		"info" : true,
+		"searching": true,
+		"responsive": true,
+		"pageLength": 100,
+		"order": [[colDate, 'desc'], [colTitle, 'desc']],
+		"columnDefs":[
+			{ "targets": colAction, "orderable": false }
+		]
+	});
+});
+</script>
+{% endblock %}

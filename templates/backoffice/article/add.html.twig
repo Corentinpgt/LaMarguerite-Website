@@ -1,0 +1,41 @@
+{# templates/backoffice/article/add.html.twig #}
+
+{% extends 'backoffice/base/base.html.twig' %}
+
+{% block body %}
+
+<div class="row">
+	<div class="col">
+		<div class="card card-warning card-outline">
+
+			<div class="card-header">
+				<div class="card-title">
+					{{ 'blog.article.add' | trans }}
+				</div>
+			</div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-12 col-md-8 mx-auto">
+						{{ include("article/form.html.twig") }}
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+{# {{ include("libs_summernote/script.js.twig") }} #}
+{{ include("backoffice/libs_dropzone/dropzone.js.twig") }}
+{{ include("backoffice/article/form.js.twig") }}
+
+<script>
+$(document).ready(function(){
+});
+</script>
+
+{% endblock %}

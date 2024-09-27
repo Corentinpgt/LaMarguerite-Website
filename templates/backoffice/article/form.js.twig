@@ -1,0 +1,25 @@
+{# templates/backoffice/article/form.js.twig #}
+
+<script>
+
+$(document).ready(function(){
+
+	{% if action == 'edit' %}
+	$("#blog_article_publishDate").datepicker({
+		format: "dd/mm/yyyy",
+		weekStart: 1,
+	});
+	{% endif %}
+});
+
+function submitForm()
+{
+	// Show that we are doing something
+	$("#submitBtn").prop('disabled', true);
+
+	// Handle Dropzone
+	$("#blog_article_files").val(getDropzoneFiles());
+
+	$("form[name='blog_article']").submit();
+}
+</script>

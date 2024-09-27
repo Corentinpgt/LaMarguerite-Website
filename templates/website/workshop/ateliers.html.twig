@@ -1,0 +1,222 @@
+{% extends "website/base.html.twig" %}
+
+{% block title %}Ateliers{% endblock %}
+
+
+
+{% block body %}
+
+<div class="container workregister">
+	<div class="row">
+		<div class="col">
+			<div class="workregister__inner">
+				<h2>Comment m'inscrire ?</h2>
+				<p>Si vous souhaitez vous inscrire à l’un de nos ateliers, vous pouvez nous contacter par :</p>
+				<ul>
+					<li><img src="website/Assets/dot-li.svg" alt="Point de liste"><a href="{{ path('contact')}}">Via notre formulaire de contact</a></li>
+					<li><img src="website/Assets/dot-li.svg" alt="Point de liste">Mail : contact@lamargueriteasso.fr</li>
+					<li><img src="website/Assets/dot-li.svg" alt="Point de liste">Tel : 05 55 01 35 94</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container searchwork">
+	<div class="row">
+		<div class="col">
+			<div class="searchwork__inner">
+				<select name="category" id="searchwork_cat">
+					<option value="" disabled selected hidden>Choisir une catégorie</option>
+					{% for cat in workshopCat %}
+					<option value="{{cat.id}}">{{cat.name}}</option>
+					{% endfor %}
+
+				</select>
+				<section>
+					<input type="text" id="searchwork_bar" placeholder="Rechercher un atelier">
+					<button><img src="website/Assets/loupe.svg" alt="icone de loupe"></button>
+				</section>
+
+				<button><a {{latestFilename}}>Télécharger le calendrier</a></button>
+
+
+				{# TODO problème, c'est pas bon car l'heure actuelle n'égale pas l'heure du dernier fichier #}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container workcontainer">
+	<div class="row">
+
+		{% for work in workshop %}
+
+
+		<div class="col-12 col-lg-6 col-xl-4">
+			<div data-w-color="{{work.workshopCategory.color}}" class="workcard">
+				<section class="workcard__header">
+					{% if work.contributor.profilePic == null %}
+						<div class="BG_color_change BORDER_color_change"></div>
+					{% else %}
+						<img class="BORDER_color_change" src="/assets/images/{{work.contributor.profilePic.id}}.{{work.contributor.profilePic.extension}}" alt="Photo de profil">
+					{% endif %}
+					<ul>
+						<li><h2 class="TEXT_color_change">{{work.name}}</h2></li>
+						<li><h2>{{work.contributor.firstname}} {{work.contributor.lastname}}</h2></li>
+					</ul>
+					<h3 class="BG_color_change">{{work.workshopCategory.name}}</h3>
+				</section>
+		
+				<section class="workcard__activity BORDER_color_change">
+					<h3 class="TEXT_color_change">{{work.name}} ?</h3>
+					<p>{{work.infoWorkshop}}</p>
+				</section>
+		
+				<section class="workcard__content">
+					<h3 class="TEXT_color_change">Activités des scéances :</h3>
+					<p>{{work.activityWorkshop}}</p>
+				</section>
+		
+				<section class="workcard__info BG_color_change">
+					<h3>Lieux, Jours & Heures</h3>
+					<p>{{work.place}} <br> {{work.day}} <br> {{work.hours}} </p>
+				</section>
+			</div>
+		</div>
+
+		{% endfor %}
+
+	</div>
+</div>
+
+
+
+{{ include("website/workshop/workshop_card_template.html.twig") }}
+
+
+
+
+
+{% endblock %}
+
+
+
+
+{% block javascripts %}
+<script>
+$(document).ready(function() {
+
+
+	// Change the color of the workshop card depending on the category
+
+	function colorWorkshopCard() {
+		$('.workcard').each(function() {
+
+			// Get the color
+			var color = $(this).data('w-color');
+
+			// For each element in the card, change the color
+			$(this).find('.BG_color_change').css('background-color', color);
+			$(this).find('.TEXT_color_change').css('color', color);
+			$(this).find('.BORDER_color_change').css('border-color', color);
+		});
+	}
+
+	colorWorkshopCard();
+
+
+	$('#searchwork_cat').change(function() {
+
+		// Get the id of the category
+        var category = $(this).val();
+
+        $.ajax({
+            url: '/api/search/workshop/category?id=' + category, 
+            method: 'GET',
+            success: function(data) {
+
+				// Replace the cards and color them
+				replaceWorkshopCards(data);
+				colorWorkshopCard();
+            }
+        });
+    });
+
+    
+    $('#searchwork_bar').next('button').click(function(e) {
+        e.preventDefault();
+
+		// Get the value of the searchbar
+        var searchTerm = $('#searchwork_bar').val();
+
+        $.ajax({
+            url: '/api/search/workshop/content?value=' + searchTerm, 
+            method: 'GET',
+            success: function(data) {
+
+				// Replace the cards and color them
+				replaceWorkshopCards(data);
+				colorWorkshopCard();
+            }
+        });
+    });
+
+	$('#searchwork_bar').keypress(function(e) {
+
+		if(e.which == 13) {
+			// If enter key is pressed
+			e.preventDefault();
+
+			// Get the value of the searchbar
+			var searchTerm = $('#searchwork_bar').val();
+
+			$.ajax({
+				url: '/search/workshop/content?value=' + searchTerm, 
+				method: 'GET',
+				success: function(data) {
+
+					// Replace the cards and color them
+					replaceWorkshopCards(data);
+					colorWorkshopCard();
+				}
+			});
+		}
+	});
+
+});
+
+
+// Create a list of all the Workshop cards
+
+function replaceWorkshopCards(workshops) {
+	
+
+	let listHTML = "";
+
+	// For each table of data, create a card and add it to the list
+	workshops.forEach(workshop => {
+		listHTML +=createWorkshopCard(workshop);
+	});
+
+	// Replace the container content with all the cards created
+	$('.workcontainer .row').html(listHTML);
+}
+
+
+// Create a card using the workshop data
+
+function createWorkshopCard(workshop) {
+
+	// Get the template
+	var template_workshop_card = $('#workshop_card_template').html();
+
+	// Replace the placeholders with the data
+	var listHTML=template_workshop_card.replace(/%name%/g, workshop.name).replace(/%cont_firstname%/g, workshop.cont_firstname).replace(/%cont_lastname%/g, workshop.cont_lastname).replace(/%cont_image%/g, workshop.cont_image).replace(/%cat_name%/g, workshop.cat_name).replace(/%cat_color%/g, workshop.cat_color).replace(/%info%/g, workshop.info).replace(/%activity%/g, workshop.activity).replace(/%place%/g, workshop.place).replace(/%day%/g, workshop.day).replace(/%hours%/g, workshop.hours);
+	return listHTML;
+
+}
+</script>
+{% endblock %}

@@ -1,0 +1,52 @@
+{# templates/backoffice/partner/form.html.twig #}
+
+{{ form_start(form) }}
+{{ form_errors(form) }}
+
+{# Add.Mode #}
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'date_over' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.date_over) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.date_over) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'title' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.title) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.title) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'text' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.text) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.text) }}
+	</div>
+</div>
+
+
+<hr>
+
+<div class="row form-group">
+	<div class="col-12">
+		<div class="btn-group w-100">
+			<a href="{{ path('notification_dashboard') }}" class="btn btn-form-cancellation w-30">
+				{{ 'cancel' | trans }}
+			</a>
+			<input type="submit" class="btn btn-form-validation w-70" value="{{ 'validate' | trans }}" />
+		</div>
+	</div>
+</div>
+
+{{ form_end(form) }}

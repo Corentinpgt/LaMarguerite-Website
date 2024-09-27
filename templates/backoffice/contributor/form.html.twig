@@ -1,0 +1,80 @@
+{# templates/backoffice/contributor/form.html.twig #}
+
+{{ form_start(form) }}
+{{ form_errors(form) }}
+
+{# Add.Mode #}
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'firstname' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.firstname) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.firstname) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'lastname' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.lastname) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.lastname) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'job' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.job) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.job) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'profile_pic' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.profile_pic) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.profile_pic) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'mail' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.mail) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.mail) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'phone' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.phone) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.phone) }}
+	</div>
+</div>
+
+<hr>
+
+<div class="row form-group">
+	<div class="col-12">
+		<div class="btn-group w-100">
+			<a href="{{ path('contributor_dashboard') }}" class="btn btn-form-cancellation w-30">
+				{{ 'cancel' | trans }}
+			</a>
+			<input type="submit" class="btn btn-form-validation w-70" value="{{ 'validate' | trans }}" />
+		</div>
+	</div>
+</div>
+
+{{ form_end(form) }}

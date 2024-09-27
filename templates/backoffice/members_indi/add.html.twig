@@ -1,0 +1,35 @@
+{# templates/backoffice/members_indi/add.html.twig #}
+
+{% extends 'backoffice/base/base.html.twig' %}
+
+{% block body %}
+
+<div class="row">
+	<div class="col">
+
+		<div class="card card-warning card-outline">
+
+			<div class="card-header">
+				<h3 class="card-title">{{ 'members_indi.add' | trans }}</h3>
+			</div>
+
+			<div class="card-body">
+				<div class="row">
+					<div class="col">
+						{{ include("backoffice/members_indi/form.html.twig") }}
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+$(document).ready(function(){
+});
+</script>
+{% endblock %}

@@ -1,0 +1,58 @@
+{# templates/backoffice/article/edit.html.twig #}
+
+{% extends 'backoffice/base/base.html.twig' %}
+
+{% block body %}
+
+<div class="row">
+	<div class="col">
+		<div class="card card-warning card-outline">
+
+			<div class="card-header">
+				<div class="card-title">
+					{{ 'blog.article.edit' | trans }} {{ article.title }}
+				</div>
+			</div>
+			<div class="card-body">
+
+				<div class="row">
+					<div class="col-12 col-md-8 mx-auto">
+						{{ include("backoffice/article/form.html.twig") }}
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+{# {{ include("libs_summernote/script.js.twig") }} #}
+{{ include("backoffice/libs_dropzone/dropzone.js.twig") }}
+{{ include("backoffice/article/form.js.twig") }}
+
+<script>
+function removeArticleImg(uid, id) {
+    $.ajax({
+        url: '/nexus/image/remove/dropzone',
+        type: 'POST',
+		data: { uuid: uid },
+        dataType: 'json', 
+    })
+    .done(function() {
+        $("#img_" + id).remove();
+    })
+    .fail(function(xhr, textStatus, errorThrown) {
+        console.log('Error in Operation');
+    });
+
+}
+
+// $(document).ready(function(){
+// });
+</script>
+
+{% endblock %}

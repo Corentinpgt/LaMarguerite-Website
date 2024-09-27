@@ -1,0 +1,97 @@
+{# templates/backoffice/user/form.html.twig #}
+
+{{ form_start(form) }}
+{{ form_errors(form) }}
+
+{# Add.Mode #}
+{% if action == 'add' or action == 'edit' %}
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'email' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.email) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.email) }}
+	</div>
+</div>
+{% endif %}
+
+{% if action == 'add' or action == 'edit_password' %}
+<div class="row form-group">
+	<label class="col-md-2 control-label required">
+		{{ 'password' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.password.first) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.password.first) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 control-label required">
+		{{ 'password.repeat' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.password.second) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.password.second) }}
+	</div>
+</div>
+{% endif %}
+
+{% if action == 'add' or action == 'edit' %}
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'roles' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.roles) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.roles) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'employee' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.employee) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.employee) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'lastname' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.lastname) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.lastname) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'firstname' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.firstname) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.firstname) }}
+	</div>
+</div>
+{% endif %}
+
+<hr>
+
+<div class="row form-group">
+	<div class="col-12">
+		<div class="btn-group w-100">
+			<a href="{{ path('user_dashboard') }}" class="btn btn-form-cancellation w-30">
+				{{ 'cancel' | trans }}
+			</a>
+			<input type="submit" class="btn btn-form-validation w-70" value="{{ 'validate' | trans }}" />
+		</div>
+	</div>
+</div>
+
+{{ form_end(form) }}

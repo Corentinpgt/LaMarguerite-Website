@@ -1,0 +1,388 @@
+{# templates/backoffice/base/sidebar_menu.html.twig #}
+
+{% set dashboard_is_active = false %}
+{% set article_is_active = false %}
+{% set user_is_active = false %}
+{% set partner_is_active = false %}
+{% set workshop_is_active = false %}
+{% set workshop_cat_is_active = false %}
+{% set contributor_is_active = false %}
+{% set notification_is_active = false %}
+{% set membership_asso_is_active = false %}
+{% set membership_indi_is_active = false %}
+{% set contact_is_active = false %}
+{% set workshop_planning_is_active = false %}
+{% set members_asso_is_active = false %}
+{% set members_indi_is_active = false %}
+{% set members_stats_is_active = false %}
+{% set event_is_active = false %}
+{% set project_is_active = false %}
+{% set employee_is_active = false %}
+{% set pathology_is_active = false %}
+{% set patient_is_active = false %}
+
+{% set workshops = false %}
+{% set news = false %}
+{% set memberships = false %}
+
+
+
+
+{% if route == 'dashboard' %}
+	{% set dashboard_is_active = true %}
+	{% set workshops = false %}
+	{% set news = false %}
+	{% set memberships = false %}
+{% endif %}
+
+
+{# Articles #}
+
+{% if route starts with 'article' %}
+	{% set article_is_active = true %}
+	{% set workshops = false %}
+	{% set news = true %}
+	{% set memberships = false %}
+{% endif %}
+
+{% if route starts with 'event' %}
+	{% set event_is_active = true %}
+	{% set workshops = false %}
+	{% set news = true %}
+	{% set memberships = false %}
+{% endif %}
+
+{# Memberships #}
+
+{% if route starts with 'members_stats' %}
+	{% set members_stats_is_active = true %}
+	{% set workshops = false %}
+	{% set news = false %}
+	{% set memberships = true %}
+{% endif %}
+
+{% if route starts with 'members_asso' %}
+	{% set members_asso_is_active = true %}
+	{% set workshops = false %}
+	{% set news = false %}
+	{% set memberships = true %}
+{% endif %}
+
+{% if route starts with 'members_indi' %}
+	{% set members_indi_is_active = true %}
+	{% set workshops = false %}
+	{% set news = false %}
+	{% set memberships = true %}
+{% endif %}
+
+{% if route starts with 'membership_asso' %}
+	{% set membership_asso_is_active = true %}
+	{% set workshops = false %}
+	{% set news = false %}
+	{% set memberships = true %}
+{% endif %}
+
+{% if route starts with 'membership_indi' %}
+	{% set membership_indi_is_active = true %}
+	{% set workshops = false %}
+	{% set news = false %}
+	{% set memberships = true %}
+{% endif %}
+
+
+
+{# Workshops #}
+
+{% if route starts with 'workshop' %}
+	{% set workshop_is_active = true %}
+	{% set workshops = true %}
+	{% set news = false %}
+	{% set memberships = false %}
+{% endif %}
+
+{% if route starts with 'workshop_cat' %}
+	{% set workshop_cat_is_active = true %}
+	{% set workshop_is_active = false %}
+	{% set workshops = true %}
+	{% set news = false %}
+	{% set memberships = false %}
+{% endif %}
+
+{% if route starts with 'contributor' %}
+	{% set contributor_is_active = true %}
+	{% set workshops = true %}
+	{% set news = false %}
+	{% set memberships = false %}
+{% endif %}
+
+{% if route starts with 'workshop_planning' %}
+	{% set workshop_planning_is_active = true %}
+	{% set workshop_is_active = false %}
+	{% set workshops = true %}
+	{% set news = false %}
+	{% set memberships = false %}
+{% endif %}
+
+
+
+{% if route starts with 'contact' %}
+	{% set contact_is_active = true %}
+	{% set workshops = false %}
+	{% set news = false %}
+	{% set memberships = false %}
+{% endif %}
+
+{% if route starts with 'notification' %}
+	{% set notification_is_active = true %}
+	{% set workshops = false %}
+	{% set news = false %}
+	{% set memberships = false %}
+{% endif %}
+
+{% if route starts with 'partner' %}
+	{% set partner_is_active = true %}
+	{% set workshops = false %}
+	{% set news = false %}
+	{% set memberships = false %}
+{% endif %}
+
+{% if route starts with 'project' %}
+	{% set project_is_active = true %}
+	{% set workshops = false %}
+	{% set news = false %}
+	{% set memberships = false %}
+{% endif %}
+
+{% if route starts with 'user' %}
+	{% set user_is_active = true %}
+	{% set workshops = false %}
+	{% set news = false %}
+	{% set memberships = false %}
+{% endif %}
+
+
+{% if route starts with 'employee' %}
+	{% set employee_is_active = true %}
+	{% set workshops = false %}
+	{% set news = false %}
+	{% set memberships = false %}
+{% endif %}
+
+{% if route starts with 'pathology' %}
+	{% set pathology_is_active = true %}
+	{% set workshops = false %}
+	{% set news = false %}
+	{% set memberships = false %}
+{% endif %}
+
+{% if route starts with 'patient' %}
+	{% set patient_is_active = true %}
+	{% set workshops = false %}
+	{% set news = false %}
+	{% set memberships = false %}
+{% endif %}
+
+
+
+<nav class="mt-2">
+
+<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+	<li class="nav-item">
+		<a href="{{ path('dashboard') }}" class="nav-link {% if dashboard_is_active %}active{% endif %}">
+			<i class="nav-icon far fa-image"></i>
+			<p>{{ 'dashboard' | trans }}</p>
+		</a>
+	</li>
+
+	
+
+	<li class="nav-item {% if news %}menu-open{% endif %}">
+		<a class="nav-link news" href="#">{{'articles' | trans}}<i class="right fas fa-angle-left"></i></a>
+		<ul class="nav nav-treeview">
+			<li class="nav-item">
+				<a href="{{ path('article_dashboard') }}" class="nav-link {% if article_is_active %}active{% endif %}">
+					<i class="nav-icon far fa-newspaper"></i>
+					<p>{{ 'articles' | trans }}</p>
+				</a>
+			</li>
+
+			<li class="nav-item">
+				<a href="{{ path('event_dashboard') }}" class="nav-link {% if event_is_active %}active{% endif %}">
+					<i class="nav-icon far fa-calendar-alt"></i>
+					<p>{{ 'events' | trans }}</p>
+				</a>
+			</li>
+		</ul>
+	</li>
+
+
+	<li class="nav-item {% if memberships %}menu-open{% endif %}">
+		<a class="nav-link memberships" href="#">{{'memberships' | trans}}<i class="right fas fa-angle-left"></i></a>
+		<ul class="nav nav-treeview">
+			<li class="nav-item">
+				<a href="{{ path('members_stats_dashboard') }}" class="nav-link {% if members_stats_is_active %}active{% endif %}">
+					<i class="nav-icon fas fa-chart-bar"></i>
+					<p>{{ 'members_stats' | trans }}</p>
+				</a>
+			</li>
+
+
+			<li class="nav-item">
+				<a href="{{ path('members_asso_dashboard') }}" class="nav-link {% if members_asso_is_active %}active{% endif %}">
+					<i class="nav-icon fas fa-signature"></i>
+					<p>{{ 'members_asso' | trans }}</p>
+				</a>
+			</li>
+
+
+			<li class="nav-item">
+				<a href="{{ path('members_indi_dashboard') }}" class="nav-link {% if members_indi_is_active %}active{% endif %}">
+					<i class="nav-icon fas fa-signature"></i>
+					<p>{{ 'members_indi' | trans }}</p>
+				</a>
+			</li>
+
+			<li class="nav-item">
+				<a href="{{ path('membership_asso_dashboard') }}" class="nav-link {% if membership_asso_is_active %}active{% endif %}">
+					<i class="nav-icon fas fa-envelope"></i>
+					<p>{{ 'membership_asso' | trans }}</p>
+				</a>
+			</li>
+
+
+			<li class="nav-item">
+				<a href="{{ path('membership_indi_dashboard') }}" class="nav-link {% if membership_indi_is_active %}active{% endif %}">
+					<i class="nav-icon fas fa-envelope"></i>
+					<p>{{ 'membership_indi' | trans }}</p>
+				</a>
+			</li>
+		</ul>
+	</li>
+
+	
+	<li class="nav-item {% if workshops %}menu-open{% endif %}">
+		<a class="nav-link workshops" href="#">{{'workshops' | trans}}<i class="right fas fa-angle-left"></i></a>
+		<ul class="nav nav-treeview">
+			<li class="nav-item">
+				<a href="{{ path('workshop_dashboard') }}" class="nav-link {% if workshop_is_active %}active{% endif %}">
+					<i class="nav-icon fas fa-puzzle-piece"></i>
+					<p>{{ 'workshops' | trans }}</p>
+				</a>
+			</li>
+
+			<li class="nav-item">
+				<a href="{{ path('workshop_cat_dashboard') }}" class="nav-link {% if workshop_cat_is_active %}active{% endif %}">
+					<i class="nav-icon fas fa-boxes"></i>
+					<p>{{ 'workshop_cats' | trans }}</p>
+				</a>
+			</li>
+
+			<li class="nav-item">
+				<a href="{{ path('contributor_dashboard') }}" class="nav-link {% if contributor_is_active %}active{% endif %}">
+					<i class="nav-icon fas fa-user-tag"></i>
+					<p>{{ 'contributors' | trans }}</p>
+				</a>
+			</li>
+
+			<li class="nav-item">
+				<a href="{{ path('workshop_planning_dashboard') }}" class="nav-link {% if workshop_planning_is_active %}active{% endif %}">
+					<i class="nav-icon fas fa-calendar"></i>
+					<p>{{ 'workshop_planning' | trans }}</p>
+				</a>
+			</li>
+		</ul>
+	</li>
+
+
+
+
+	<li class="nav-item">
+		<a href="{{ path('contact_dashboard') }}" class="nav-link {% if contact_is_active %}active{% endif %}">
+			<i class="nav-icon fas fa-inbox"></i>
+			<p>{{ 'contact' | trans }}</p>
+		</a>
+	</li>
+
+
+
+	<li class="nav-item">
+		<a href="{{ path('notification_dashboard') }}" class="nav-link {% if notification_is_active %}active{% endif %}">
+			<i class="nav-icon fas fa-exclamation"></i>
+			<p>{{ 'notifications' | trans }}</p>
+		</a>
+	</li>
+
+
+
+	<li class="nav-item">
+		<a href="{{ path('partner_dashboard') }}" class="nav-link {% if partner_is_active %}active{% endif %}">
+			<i class="nav-icon far fa-handshake"></i>
+			<p>{{ 'partners' | trans }}</p>
+		</a>
+	</li>
+
+
+
+
+	<li class="nav-item">
+		<a href="{{ path('project_dashboard') }}" class="nav-link {% if project_is_active %}active{% endif %}">
+			<i class="nav-icon fas fa-project-diagram"></i>
+			<p>{{ 'projects' | trans }}</p>
+		</a>
+	</li>
+
+	<hr>
+
+	<li class="nav-item {% if news %}menu-open{% endif %}">
+		<a class="nav-link news" href="#">{{'patients' | trans}}<i class="right fas fa-angle-left"></i></a>
+		<ul class="nav nav-treeview">
+
+			<li class="nav-item">
+				<a href="{{ path('patient_dashboard') }}" class="nav-link {% if patient_is_active %}active{% endif %}">
+					<i class="nav-icon far fa-newspaper"></i>
+					<p>{{ 'patient' | trans }}</p>
+				</a>
+			</li>
+
+			<li class="nav-item">
+				<a href="{{ path('pathology_dashboard') }}" class="nav-link {% if pathology_is_active %}active{% endif %}">
+					<i class="nav-icon far fa-newspaper"></i>
+					<p>{{ 'pathology' | trans }}</p>
+				</a>
+			</li>
+
+			
+		</ul>
+	</li>
+
+
+	<li class="nav-item">
+		<a href="{{ path('employee_dashboard') }}" class="nav-link {% if employee_is_active %}active{% endif %}">
+			<i class="nav-icon fas fa-user-md"></i>
+			<p>{{ 'employees' | trans }}</p>
+		</a>
+	</li>
+
+	<hr>
+
+
+
+	<li class="nav-header">Settings</li>
+
+	<li class="nav-item">
+		<a href="{{ path('user_dashboard') }}" class="nav-link {% if user_is_active %}active{% endif %}">
+			<i class="nav-icon fas fa-user text-warning"></i>
+			<p>{{ 'users' | trans }}</p>
+		</a>
+	</li>
+
+	<li class="nav-item">
+		<a href="{{ path('logout') }}" class="nav-link">
+			<i class="nav-icon fas fa-sign-out-alt text-danger"></i>
+			<p class="text">{{ 'logout' | trans }}</p>
+		</a>
+	</li>
+
+</ul>
+</nav>

@@ -1,0 +1,14 @@
+{# templates/backoffice/base/sidebar_user_panel.html.twig #}
+
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+	<div class="image">
+		<img src="{{ asset('theme_master/dist/img/user160.jpg') }}" class="img-circle" alt="User Image">
+	</div>
+	<div class="info">
+		<a href="#" class="d-block">
+			{{ app.user.firstname }}
+		</a>
+	</div>
+</div>
+{% endif %}

@@ -1,0 +1,101 @@
+{# templates/backoffice/workshop/form.html.twig #}
+
+{{ form_start(form) }}
+{{ form_errors(form) }}
+
+{# Add.Mode #}
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'name' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.name) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.name) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'workshop_category' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.workshop_category) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.workshop_category) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'contributor' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.contributor) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.contributor) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'info_workshop' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.info_workshop) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.info_workshop) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label required">
+		{{ 'activity_workshop' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.activity_workshop) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.activity_workshop) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label ">
+		{{ 'place' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.place) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.place) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label ">
+		{{ 'day' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.day) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.day) }}
+	</div>
+</div>
+
+<div class="row form-group">
+	<label class="col-md-2 col-form-label ">
+		{{ 'hours' | trans }}&nbsp<span class="text-danger"><strong>*</strong></span>
+	</label>
+	<div class="col-md-10">{{ form_widget(form.hours) }}</div>
+	<div class="form_errors col-md-10 offset-md-2">
+		{{ form_errors(form.hours) }}
+	</div>
+</div>
+
+
+<hr>
+
+<div class="row form-group">
+	<div class="col-12">
+		<div class="btn-group w-100">
+			<a href="{{ path('workshop_dashboard') }}" class="btn btn-form-cancellation w-30">
+				{{ 'cancel' | trans }}
+			</a>
+			<input type="submit" class="btn btn-form-validation w-70" value="{{ 'validate' | trans }}" />
+		</div>
+	</div>
+</div>
+
+{{ form_end(form) }}

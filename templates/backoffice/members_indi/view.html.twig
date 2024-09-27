@@ -1,0 +1,67 @@
+{% extends 'backoffice/base/base.html.twig' %}
+
+{% block body %}
+
+
+<div class="membership__btns">
+	<a href="{{ path('members_indi_dashboard')}}">Retour</a>
+	</div>
+
+
+<ul class="membership__uls">
+	<li>
+		<h3>{{'name_asso' | trans}} :</h3>
+		<p>{{members_indi.name}}</p>
+	</li>
+
+	<li>
+		<h3>{{'membership_date' | trans }} :</h3>
+		<p>{{members_indi.membershipDate | date("d/m/Y")}}</p>
+	</li>
+
+	<li>
+		<h3>{{'birthdate' | trans }} :</h3>
+		<p>{{members_indi.birthdate | date("d/m/Y")}}</p>
+	</li>
+
+	<li>
+		<h3>{{'address_indi' | trans }} :</h3>
+		<p>{{members_indi.address}}</p>
+
+	</li>
+
+	<li>
+		<h3>{{'mail' | trans}} :</h3>
+		<p>{{members_indi.email}}</p>
+
+	</li>
+
+	<li>
+		<h3>{{'tel' | trans}} :</h3>
+		<p>{{members_indi.phone}}</p>
+
+	</li>
+
+	<li>
+		<h3>{{'job' | trans}} :</h3>
+		<p>{{members_indi.job}}</p>
+
+	</li>
+
+	<li>
+		<h3>{{'imglaw' | trans}} :</h3>
+		<p>{{members_indi.imgLaw}}
+	
+	</li>
+
+	<li>
+		<h3>{{'asso_membership' | trans}} :</h3>
+		{% if members_indi.membersOf != null %}
+		<p>{{members_indi.membersOf.name}}</p>
+		{% endif %}
+	</li>
+
+</ul>
+
+
+{% endblock %}

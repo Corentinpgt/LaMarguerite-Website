@@ -1,0 +1,65 @@
+{# templates/backoffice/members_indi/dashboard.html.twig #}
+
+{% extends 'backoffice/base/base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ 'members_indi' | trans }}{% endblock %}
+
+{% block body %}
+
+<div class="row">
+	<div class="col">
+
+		<div class="card card-warning card-outline">
+
+			<div class="card-header">
+				<h3 class="card-title">{{ 'members_indi' | trans }}</h3>
+
+				<div class="card-tools">
+
+					<a href="{{ path('members_indi_add') }}" class="btn btn-tool">
+						<i class="fas fa-plus"></i>
+					</a>
+
+				</div>
+
+				
+			</div>
+
+			<div class="card-body">
+				<div class="row">
+					<div class="col">
+						{{ include('backoffice/members_indi/table.html.twig') }}
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+$(document).ready(function(){
+	var colName = 0;
+	var colDate = 1;
+	var colAction = 2;
+
+	var table = $('#dt_members_indis').DataTable({
+		"paging" : true,
+		"info" : true,
+		"searching": true,
+		"responsive": true,
+		"pageLength": 100,
+		"order": [[colName, 'desc'],[colDate, 'desc']],
+		"columnDefs":[
+			{ "targets": colAction, "orderable": false }
+		]
+	});
+});
+</script>
+{% endblock %}

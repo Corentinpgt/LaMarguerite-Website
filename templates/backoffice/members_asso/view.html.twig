@@ -1,0 +1,77 @@
+{% extends 'backoffice/base/base.html.twig' %}
+
+{% block body %}
+
+
+<div class="membership__btns">
+	<a href="{{ path('members_asso_dashboard')}}">Retour</a>
+	</div>
+
+
+<ul class="membership__uls">
+	<li>
+		<h3>{{'name_asso' | trans}} :</h3>
+		<p>{{members_asso.name}}</p>
+	</li>
+
+	<li>
+		<h3>{{'img' | trans}} :</h3>
+		{% if members_asso.img != null %}
+			<a href="/assets/images/{{members_asso.img.id}}.{{members_asso.img.extension}}" download><img src="/assets/images/{{members_asso.img.id}}.{{members_asso.img.extension}}" alt="logo de {{members_asso.name}}"></a>
+		{% endif %}
+	</li>
+
+	<li>
+		<h3>{{'description' | trans}} :</h3>
+		<p>{{members_asso.description}}</p>
+	</li>
+
+	<li>
+		<h3>{{'membership_date' | trans}} :</h3>
+		<p>{{members_asso.membershipDate | date("d/m/Y")}}</p>
+	</li>
+	<li>
+		<h3>{{'payment' | trans}} :</h3>
+		<p>{{members_asso.payment}}</p>
+	</li>
+	<li>
+		<h3>{{'payment_date' | trans}} :</h3>
+		<p>{{members_asso.paymentDate | date("d/m/Y")}}</p>
+	</li>
+	<li>
+		<h3>{{'address' | trans}} :</h3>
+		<p>{{members_asso.address}}</p>
+	</li>
+	<li>
+		<h3>{{'president_name' | trans}} :</h3>
+		<p>{{members_asso.presidentName}}</p>
+	</li>
+	<li>
+		<h3>{{'president_email' | trans}} :</h3>
+		<p>{{members_asso.presidentEmail}}</p>
+	</li>
+	<li>
+		<h3>{{'president_phone' | trans}} :</h3>
+		<p>{{members_asso.presidentPhone}}</p>
+	</li>
+	<li>
+		<h3>{{'contact_name' | trans}} :</h3>
+		<p>{{members_asso.contactName}}</p>
+	</li>
+	<li>
+		<h3>{{'contact_job' | trans}} :</h3>
+		<p>{{members_asso.contactJob}}</p>
+	</li>
+	<li>
+		<h3>{{'contact_email' | trans}} :</h3>
+		<p>{{members_asso.contactEmail}}</p>
+	</li>
+	<li>
+		<h3>{{'contact_phone' | trans}} :</h3>
+		<p>{{members_asso.contactPhone}}</p>
+	</li>
+
+</ul>
+
+
+{% endblock %}

@@ -1,0 +1,139 @@
+{% extends "website/base.html.twig" %}
+
+{% block title %}Actualités{% endblock %}
+
+
+
+{% block body %}
+
+    
+<div class="container searchnews">
+	<div class="row">
+		<div class="col">
+			<div class="searchnews__inner">
+				<input type="text" id="searchnews_bar" placeholder="Recherchez une actualité">
+				<button id="searchnews_btn"><img src="website/Assets/loupe.svg" alt="icone de loupe"></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="searchnews_container">
+	{% for new in news %}
+
+
+		<div class="container news">
+			<div class="row">
+				<div class="col">
+					<figure class="news__inner">
+						<h3>{{ new.eventDate|date('d/m/Y') }}</h3>
+						<section class="news__img">
+							
+							{% for img in new.images %}
+								<img src="/assets/images/{{img.id}}.{{img.extension}}" alt="image d'actualité">
+							{% endfor %}
+						</section>
+						<figcaption>
+							<img src="website/Assets/logo.png" alt="Logo de La Marguerite">
+							<div class="news__content">
+								<h2>{{ new.title }}</h2>
+								<div>{{ new.body | raw}}</div>
+							</div>
+						</figcaption>
+					</figure>
+				</div>
+			</div>
+		</div>
+
+	{% endfor %}
+</div>
+
+
+
+{{ include("website/news/article_card_template.html.twig") }}
+
+
+{% endblock %}
+
+
+
+{% block javascripts %}
+<script>
+	
+	$('#searchnews_bar').next('button').click(function(e) {
+        e.preventDefault();
+
+
+		// Get the value of the searchbar
+        var searchTerm = $('#searchnews_bar').val();
+
+        $.ajax({
+            url: '/api/search/article/content?value=' + searchTerm, 
+            method: 'GET',
+            success: function(data) {
+
+				// Replace the container with the new articles
+				replaceArticleCards(data);
+            }
+        });
+    });
+
+	$('#searchnews_bar').keypress(function(e) {
+
+		if(e.which == 13) {
+			// If enter key is pressed
+			e.preventDefault();
+
+
+			// Get the value of the searchbar
+			var searchTerm = $('#searchnews_bar').val();
+
+			$.ajax({
+				url: '/search/article/content?value=' + searchTerm, 
+				method: 'GET',
+				success: function(data) {
+
+					// Replace the container with the new articles
+					replaceArticleCards(data);
+				}
+			});
+		}
+    });
+
+	function replaceArticleCards(articles) {
+		let listHTML = "";
+
+		// For each table of data, create a card and add it to the list
+		articles.forEach(article => {
+			listHTML +=createArticleCard(article);
+		});
+
+		// Replace the container content with all the cards created
+		$('#searchnews_container').html(listHTML);
+	}
+
+
+	function createArticleCard(article) {
+
+		// Get the templates of the card and the images
+		var template_article_card = $('#article_card_template').html();
+		var template_article_card_image = $('#article_card_image_template').html();
+
+		// Template the images
+		var imageHTML = "";
+		article.image.forEach(image => {
+			imageHTML += template_article_card_image.replace(/%image%/g, image.image);
+		});
+
+		// Format the date
+		var date = new Date(article.date.date);
+    	var formattedDate = date.getDate().toString().padStart(2, '0') + '/' + (date.getMonth()+1).toString().padStart(2, '0') + '/' + date.getFullYear();
+
+		// Template the card
+		var listHTML=template_article_card.replace(/%title%/g, article.title).replace(/%body%/g, article.body).replace(/%date%/g, formattedDate).replace(/%image%/g, imageHTML);
+		return listHTML;
+
+	}
+	
+</script>
+{% endblock %}

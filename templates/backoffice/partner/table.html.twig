@@ -1,0 +1,33 @@
+{# templates/backoffice/partner/table.html.twig #}
+
+<div class="table-responsive">
+	<table id="dt_partners" class="table table-striped table-bordered table-hover width-99p">
+		<thead class="thead-dark">
+			<tr>
+				<th>{{ 'name' | trans }}</th>
+				<th>{{ 'url' | trans }}</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for partner in partners %}
+				<tr>
+					<td>{{ partner.name }}</td>
+					<td>{{ partner.url }}</td>
+					<td>
+						<div class="{#width-75#} text-right">
+							<a href="{{ path('partner_edit', {'id' : partner.id}) }}" class="btn btn-sm btn-edit">
+								<i class="far fa-edit"></i>
+							</a>
+
+							<a href="javascript:void(0);" class="btn btn-sm btn-delete"
+								onclick="if(confirm('{{ 'confirm.delete' | trans }}')){window.location.href = '{{ path('partner_delete', {'id' : partner.id}) }}'}">
+								<i class="fas fa-times"></i>
+							</a>
+						</div>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>

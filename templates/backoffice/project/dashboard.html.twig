@@ -1,0 +1,63 @@
+{# templates/backoffice/project/dashboard.html.twig #}
+
+{% extends 'backoffice/base/base.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ 'project' | trans }}{% endblock %}
+
+{% block body %}
+
+<div class="row">
+	<div class="col">
+
+		<div class="card card-warning card-outline">
+
+			<div class="card-header">
+				<h3 class="card-title">{{ 'project' | trans }}</h3>
+
+				<div class="card-tools">
+
+					<a href="{{ path('project_add') }}" class="btn btn-tool">
+						<i class="fas fa-plus"></i>
+					</a>
+
+				</div>
+			</div>
+
+			<div class="card-body">
+				<div class="row">
+					<div class="col">
+						{{ include('backoffice/project/table.html.twig') }}
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+$(document).ready(function(){
+	var colName = 0;
+	var colDescription = 1;
+	var colLinklabel = 2;
+	var colLink = 3;
+	var colAction = 4;
+
+	var table = $('#dt_projects').DataTable({
+		"paging" : true,
+		"info" : true,
+		"searching": true,
+		"responsive": true,
+		"pageLength": 100,
+		"order": [[colName, 'desc'], [colDescription, 'desc']],
+		"columnDefs":[
+			{ "targets": colAction, "orderable": false }
+		]
+	});
+});
+</script>
+{% endblock %}

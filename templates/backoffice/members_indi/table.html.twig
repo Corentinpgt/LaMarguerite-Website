@@ -1,0 +1,35 @@
+{# templates/backoffice/members_indi/table.html.twig #}
+
+<div class="table-responsive">
+	<table id="dt_members_indis" class="table table-striped table-bordered table-hover width-99p">
+		<thead class="thead-dark">
+			<tr>
+				<th>{{ 'name' | trans }}</th>
+				<th>{{ 'membership_date' | trans }}</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for members in members_indi %}
+				<tr>
+					<td>{{ members.name }}</td>
+					<td>{{ members.membershipDate | date("Y/m/d") }}</td>
+					<td>
+						<div class="{#width-75#} text-right">
+							<a href="{{ path('members_indi_view', {'id' : members.id}) }}" class="btn btn-sm btn-view">
+								<i class="far fa-eye"></i>
+							</a>
+							<a href="{{ path('members_indi_edit', {'id' : members.id}) }}" class="btn btn-sm btn-edit">
+								<i class="far fa-edit"></i>
+							</a>
+							<a href="javascript:void(0);" class="btn btn-sm btn-delete"
+								onclick="if(confirm('{{ 'confirm.delete' | trans }}')){window.location.href = '{{ path('members_indi_delete', {'id' : members.id}) }}'}">
+								<i class="fas fa-times"></i>
+							</a>
+						</div>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>

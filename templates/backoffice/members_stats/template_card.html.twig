@@ -1,0 +1,122 @@
+<div id="members_stats_container" class="container members_stats">
+	<div class="row">
+		<div class="col-6">
+
+			<div class="card card-outline card-primary">
+				<div class="card-header">
+					<h3 class="card-title">Associations</h3>
+					<div class="card-tools">
+						<!-- Buttons, labels, and many other things can be placed here! -->
+						<!-- Here is a label for example -->
+						<span class="badge badge-primary">{{year}}</span>
+					</div>
+				</div>
+				<div class="card-body">
+					<p>Nombre d'association adhérentes : {{asso_nbr}}</p>
+					<p>Cotisations : {{asso_earning}}€</p>
+				</div>
+				<div class="card-footer">
+				
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-6">
+
+			<div class="card card-outline card-warning">
+				<div class="card-header">
+					<h3 class="card-title">Particuliers</h3>
+					<div class="card-tools">
+						<!-- Buttons, labels, and many other things can be placed here! -->
+						<!-- Here is a label for example -->
+						<span class="badge badge-warning">{{year}}</span>
+					</div>
+				</div>
+				<div class="card-body">
+					<p>Nombre de particuliers adhérents : {{indi_nbr}}</p>
+					<p>Cotisations : {{indi_earning}}€</p>
+				</div>
+				<div class="card-footer">
+				
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<div class="card card-outline card-success">
+				<div class="card-header">
+					<h3 class="card-title">Total</h3>
+					<div class="card-tools">
+						<!-- Buttons, labels, and many other things can be placed here! -->
+						<!-- Here is a label for example -->
+						<span class="badge badge-success">{{year}}</span>
+					</div>
+				</div>
+				<div class="card-body">
+					<p>Nombre total d'adhérents : {{both_nbr}}</p>
+					<p>Total des cotisations : {{both_earning}}€</p>
+				</div>
+				<div class="card-footer">
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+<h2 class="members_stats_h2">Particuliers adhérants à une association partenaire.</h2>
+	
+
+
+
+<div id="indirect_members_stats_container" class="container indirect_members_stats">
+	<div class="row">
+		{% for indi in indirects %}
+			<div class="col-4">
+				<div class="card card-outline card-dark">
+					<div class="card-header">
+						<h3 class="card-title">{{indi.asso.name}}</h3>
+						<div class="card-tools">
+							<!-- Buttons, labels, and many other things can be placed here! -->
+							<!-- Here is a label for example -->
+							<span class="badge badge-dark">{{year}}</span>
+						</div>
+					</div>
+					<div class="card-body">
+						<p>Nombre d'adhérents indirects: {{indi.nbr}}</p>
+					</div>
+					<div class="card-footer">
+					
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+
+		<div class="col-12">
+			<div class="card card-outline card-danger">
+				<div class="card-header">
+					<h3 class="card-title">Toutes Associations confondues</h3>
+					<div class="card-tools">
+						<!-- Buttons, labels, and many other things can be placed here! -->
+						<!-- Here is a label for example -->
+						<span class="badge badge-danger">{{year}}</span>
+					</div>
+				</div>
+				<div class="card-body">
+					<p>Nombre d'adhérents indirects: {{indirectsAll}}</p>
+					<p>Pourcentage d'adhérents indirects: {{pourcentage}}%</p>
+				</div>
+				<div class="card-footer">
+				
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>

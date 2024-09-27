@@ -1,0 +1,352 @@
+{% extends "website/base.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+
+
+
+
+{% block body %}
+    
+    
+    
+<!-- About Us & Events -->
+
+<div class="container home">
+	<div class="row">
+		<div class="col-12 col-lg-8 col-xl-8">
+
+			<div class="container us">
+				<div class="row">
+					<div class="col-12 col-xl-3">
+						<div class="us__img">
+							<img src="/website/Assets/Map_La_Marguerite_v2-01.png" alt="image de l'association">
+						</div>
+					</div>
+					<div class="col-12 col-xl-9">
+						<div class="us__content">
+							<h2>Qui sommes-nous ?</h2>
+							<h3>Une association de patients au bénéfice de patients depuis 2017</h3>
+							<p>
+								La Marguerite est une association loi 1901, à but non lucratif, spécialisée dans le soutien et l'accompagnement des personnes atteintes de pathologies chroniques qui regroupe plusieurs associations de santé. Elle est née du constat partagé du manque d'accompagnement des malades au quotidien.<br>Nous agissons pour limiter l'impact de la chronicité sur la qualité de vie des personnes malades et de leurs aidants. Nos actions s'attachent à "Aller vers" les populations vulnérables et/ou isolées pour réduire les inégalités d'accès au soin.
+							</p>
+							<div class="us__btns">
+								<a href="/contact"><button class="button contact-btn">Prendre Contact</button></a>
+								<a href="/equipe"><button class="button">Notre équipe</button></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12 col-lg-4 offset-xl-1 col-xl-3">
+			<div class="event__carousel">
+
+				<img id="event__carousel-arrowLeft" class="event__carousel-arrowLeft" src="/website/Assets/arrow_down_purple.svg">
+				<img id="event__carousel-arrowRight" class="event__carousel-arrowRight" src="/website/Assets/arrow_down_purple.svg">
+
+				<div class="event__carousel-inner">
+
+					{% for event in events %}
+						<div class="eventCard">
+							<div class="eventCard__header">
+								<h2>{{event.date | date('d/m/Y')}}</h2>
+							</div>
+							<div class="eventCard__content">
+								<h3>{{event.title}}</h3>
+								<p>{{event.description}} </p>
+							</div>
+							<div class="eventCard__footer">
+								<p>{{event.place}}</p>
+							</div>
+						</div>
+					{% endfor %}
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- Light Missions Cards -->
+
+<div class="container lightMission">
+
+	<div class="row">
+		<div class="col">
+			<h2 class="lightMission__title">Nos axes prioritaires</h2>
+		</div>
+	</div>
+
+	<div class="row lightMission__row">
+		<div class="col-12 col-xl-6">
+			<div class="bg-white rounded shadow p-5 lightMission__bigCard">
+
+				<section class="lightMission__bigCardHaut">
+					<h2>Promouvoir la Santé pour tous</h2>
+					<ul>
+						<li><img src="website/Assets/dot-li.svg" alt="point de liste"><p>Accompagnement et suivi santé</p></li>
+						<li><img src="website/Assets/dot-li.svg" alt="point de liste"><p>Relais de proximité pour les professionnel du medico-social</p></li>
+						<li><img src="website/Assets/dot-li.svg" alt="point de liste"><p>Proche des publics fragiles</p></li>
+					</ul>
+					<a href="/missions"><button class="button">En savoir plus</button></a>
+				</section>
+
+				<div id="carrouselPrevention" class="carousel slide lightMission__carrousel" data-ride="carousel">
+					<div class="carousel-indicators lightMission__controls">
+						<button class="lightMission__controlsBtn active" data-target="#carrouselPrevention" data-slide-to="0"></button>
+						<button class="lightMission__controlsBtn" data-target="#carrouselPrevention" data-slide-to="1"></button>
+						<button class="lightMission__controlsBtn" data-target="#carrouselPrevention" data-slide-to="2"></button>
+					</div>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+						<img class="d-block w-100" src="website/Assets/image1.jpg" alt="First slide">
+						</div>
+						<div class="carousel-item">
+						<img class="d-block w-100" src="website/Assets/image2.jpg" alt="Second slide">
+						</div>
+						<div class="carousel-item">
+						<img class="d-block w-100" src="website/Assets/image3.jpg" alt="Third slide">
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-12 col-xl-6">
+			<section class="d-flex flex-column justify-content-between lightMission__smallCards">
+				<div class="bg-white rounded shadow p-5 lightMission__smallCard">
+					<h2>Soutien et reconnaissance de l'aidant</h2>
+					<ul>
+						<li><img src="website/Assets/dot-li.svg" alt="point de liste"><p>Promotion et reconnaissance du rôle d'aidant</p></li>
+						<li><img src="website/Assets/dot-li.svg" alt="point de liste"><p>Temps de répit pour les aidants</p></li>
+						<li><img src="website/Assets/dot-li.svg" alt="point de liste"><p>Groupes de parole</p></li>
+					</ul>
+					<a href="/missions"><button class="button">Découvrir</button></a>
+				</div>
+		
+				<div class="bg-white rounded shadow p-5 lightMission__smallCard">
+					<h2>Innovation pour le mieux-être</h2>
+					<ul>
+						<li><img src="website/Assets/dot-li.svg" alt="point de liste"><p>Créateur de solutions innovantes</p></li>
+						<li><img src="website/Assets/dot-li.svg" alt="point de liste"><p>Relai vers les startups et laboratoires de recherche</p></li>
+					</ul>
+					<a href="/missions"><button id="buttonToProject" class="button">Explorer nos projets</button></a>
+				</div>
+			</section>
+		</div>
+	</div>
+
+</div>
+
+
+
+<!-- Patients experiences -->
+
+<div class="container patientExp">
+	<div class="row">
+		<div class="col">
+			<h2 class="patientExp__title">Valorisation de l'expérience patient</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<div class="container patientExp__up">
+				<div class="row">
+					<div class="col-12 col-lg-4">
+						<div class="patientExp__img">
+							<img src="/website/Assets/donation.png">
+						</div>
+					</div>
+					<div class="col-12 col-lg-8">
+						<h2>Approche en binôme patient - professionnel de santé</h2>
+						<p>Nous développons une approche du suivi patient animé par un binôme professionnel de santé, salarié de La Marguerite et un patient ressources issu de nos associations. Le patient ressources témoigne de son expérience de la maladie et vient compléter l’approche médicale de nos professionnels de santé.<br><br> Cette approche admet plusieurs vertus : <br><br>- Communication / compréhension facilitées par un discours adapté au quotidien<br>- Amélioration de la gestion de la maladie<br>- Meilleure observance thérapeutique<br>- Influence positive sur le moral et sur le bien-être / réduction de l’anxiété<br>- Partage d’infos pratiques et ressources techniques<br><br>Chaque patient ressources est formé à l’ETP (Education Thérapeutique du Patient)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<div class="container patientExp__down">
+				<div class="row">
+					<div class="col-12 col-lg-8">
+						<h2>S’engager dans un parcours valorisant votre expérience patient</h2>
+						<p>Vous êtes atteint d’une maladie chronique et vous souhaitez partager votre expérience patient ?<br><br><strong>Devenez patient ressources La Marguerite.</strong><br><br>Etapes de la formation :<br> -Entretien préalable<br>-Formation interne et formation ETP<br>-Mise en pratique et suivi des patients de La Marguerite. <br><br>Vous aurez également, en fonction des besoins, la possibilité de devenir Patient Partenaire.<br>Les patients partenaires interviennent auprès de personnes malades et de leurs proches dans les services hospitaliers, en lien avec les équipes soignantes. A l’écoute des patients, ils répondent à leurs questionnements et font part de leur expérience. L’objectif est d’améliorer le quotidien des malades durant les traitements et de les soutenir en essayant de rompre le sentiment d’isolement. <a href="/contact">Devenir Patient Ressources</a></p>
+					</div>
+					<div class="col-12 col-lg-4">
+						<iframe src="https://www.youtube.com/embed/2LYT2URzmSc?si=cktzDT382qoYw5BP" showinfo="0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<p class="patientExp__caption">Témoignage de Corinne, Patient Partenaire<br>La Marguerite</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Testimonials -->
+
+<div id="carouselExampleIndicators" class="carousel slide testimonial" data-ride="carousel">
+
+	<div class="carousel-inner py-4">
+		
+		<div class="carousel-item active">
+
+		<div class="testiCard">
+			<h2>Carole </h2>
+			<p>Porteuse de plusieurs pathologies, j’ai été confrontée à différentes situations concernant l’annonce de la pathologie et l’errance médicale. Ayant dû subir une transplantation hépatique en urgence étant enfant, pas de préparation possible à l’intervention et à la gestion de l’« après ».</p>
+			<img class="testiCard__haut" src="website/Assets/testi_haut.svg" alt="Image de citation">
+			<img class="testiCard__bas" src="website/Assets/testi_bas.svg" alt="Image de citation">
+		</div>
+
+		</div>
+		<div class="carousel-item ">
+
+		<div class="testiCard">
+			<h2>Carole</h2>
+			<p>Porteuse de plusieurs pathologies, j’ai été confrontée à différentes situations concernant l’annonce de la pathologie et l’errance médicale. Ayant dû subir une transplantation hépatique en urgence étant enfant, pas de préparation possible à l’intervention et à la gestion de l’« après ».</p>
+			<img class="testiCard__haut" src="website/Assets/testi_haut.svg" alt="Image de citation">
+			<img class="testiCard__bas" src="website/Assets/testi_bas.svg" alt="Image de citation">
+		</div>
+
+		</div>
+		<div class="carousel-item ">
+
+		<div class="testiCard">
+			<h2>Carole</h2>
+			<p>Porteuse de plusieurs pathologies, j’ai été confrontée à différentes situations concernant l’annonce de la pathologie et l’errance médicale. Ayant dû subir une transplantation hépatique en urgence étant enfant, pas de préparation possible à l’intervention et à la gestion de l’« après ».</p>
+			<img class="testiCard__haut" src="website/Assets/testi_haut.svg" alt="Image de citation">
+			<img class="testiCard__bas" src="website/Assets/testi_bas.svg" alt="Image de citation">
+		</div>
+
+		</div>
+		
+	</div>
+	<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block javascripts %}
+    <script>
+
+	// If cookie notification, close
+	$(document).ready(function() {
+		if (getCookie('notif') === 'true') {
+			$('#notification').css({
+				'max-height': '0',
+				'margin-bottom': '0'
+			})
+		}
+	});
+
+
+
+	// Close the notification 
+	$('#notification_cross').change(function() {
+		if ($(this).is(':checked')) {
+			$(this).parent().css({
+				'max-height': '0',
+				'margin-bottom': '0'
+
+			});
+			setCookie('notif', true, 1);
+
+		}
+	});
+
+
+	// Button to scroll to projects in missions page
+	$('#buttonToProject').click(function() {
+		setCookie("scrollProject", true, 1);
+	});
+
+
+
+	// Get the cars & carousel
+	let eventCards = document.querySelectorAll('.eventCard');
+	let eventCarousel = document.querySelector('.event__carousel-inner');
+
+
+	// Set first card
+	let currentCardIndex = 0;
+	let currentCard = eventCards[currentCardIndex];
+
+	// Set buttons & listeners
+	let prevButton = document.getElementById('event__carousel-arrowLeft');
+	let nextButton = document.getElementById('event__carousel-arrowRight');
+	prevButton.style.display = 'none';
+
+	nextButton.addEventListener('click', nextCard);
+	prevButton.addEventListener('click', prevCard);
+
+
+	// Slide to next card
+	function nextCard() {
+		let cardWidth = currentCard.offsetWidth;
+		// See if we are not at the last card
+		if (currentCardIndex < eventCards.length - 1) {
+
+			// Turn on the previous button cause we are going at the second card
+			if (currentCardIndex === 0) {
+				prevButton.style.display = 'block';
+			}
+			currentCardIndex++;
+
+			// translate
+			eventCarousel.style.transform = `translateX(-${cardWidth * currentCardIndex}px)`;
+
+			// If it's the last card, turn off the next button
+			if (currentCardIndex === eventCards.length - 1) {
+				nextButton.style.display = 'none';
+			}
+		}
+	}
+
+	function prevCard() {
+		let cardWidth = currentCard.offsetWidth;
+
+		// See if we are not at the first card
+		if (currentCardIndex > 0) {
+
+			// Turn on the next button cause we are going at the second to last card
+			if (currentCardIndex === eventCards.length - 1) {
+				nextButton.style.display = 'block';
+			}
+			currentCardIndex--;
+
+
+			// translate
+			eventCarousel.style.transform = `translateX(-${cardWidth * currentCardIndex}px)`;
+
+			// If it's the first card, turn off the previous button
+			if (currentCardIndex === 0) {
+				prevButton.style.display = 'none';
+			}
+		}
+	}
+
+
+	</script>
+{% endblock %}

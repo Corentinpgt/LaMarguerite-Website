@@ -1,0 +1,106 @@
+{# templates/backoffice/dashboard/dashboard.html.twig #}
+
+{% extends 'backoffice/base/base.html.twig' %}
+
+{% block title %}{{ parent() }} - Dashboard{% endblock %}
+
+{% block body %}
+<div class="dashboard">
+	<div class="dashboard__header">
+		<img src="/website/Assets/logo.png">
+		<h1>BackOffice - Documentation</h1>
+	</div>
+
+	<h2>Infos générales : </h2>
+
+	<h3>Cette interface (BackOffice) permet de :</h3>
+	<ul>
+		<li>Modifier le contenu dynamique du site de La Marguerite, tel que les ateliers, les partenaires, etc.</li>
+		<li>Lister des informations, telles que les demandes de contact, les adhérents, etc.</li>
+
+	</ul>
+
+
+	<p>À terme, ce BackOffice servira d'outils de listing et d'analyse.</p>
+
+	<h2>Menu Principal</h2>
+
+
+	<h3>Actualité :</h3>
+	<ul>
+		<li>Actualité : Ajoutez, modifiez, publiez ou supprimez des articles d'actualité. Chaque article est limité à 3 images au maximum.</li>
+		<li>Possibilité de publier une actualité sur Facebook, ainsi que de la dépublier. <strong>CES OPERATIONS PEUVENT PRENDRE PLUSIEURES SECONDES.</strong></li>
+	</ul>
+
+	<h3>Adhérents :</h3>
+	<ul>
+		<li>Associations Adhérentes : Administrez les données des associations adhérentes.</li>
+		<li>Particuliers Adhérents : Administrez les données des particuliers adhérents.</li>
+	</ul>
+
+	<h3>Atelier :</h3>
+	<ul>
+		<li>Atelier : Créez et gérez les différents ateliers proposés par l'association.</li>
+		<li>Catégorie d'ateliers : Ajoutez, modifiez ou supprimez les catégories d'ateliers.</li>
+		<li>Contributeur : Ajoutez ou gérez les contributeurs qui animent les ateliers.</li>
+		<li>Planning des ateliers : Déposez le planning des ateliers en pdf, téléchargeable par les utilisateurs.</li>
+	</ul>
+
+	<h3>Contact :</h3>
+	<ul>
+		<li>Contact : Consultez et gérez les demandes de contact envoyés via le formulaire de contact du site. ("Fait" si la demande a été traitée, "À Faire" dans le cas contraire.)</li>
+	</ul>
+
+	<h3>Demande d'adhésion :</h3>
+	<ul>
+		<li>Adhésion Association : Listez les demandes d'adhésion des associations.</li>
+		<li>Adhésion Particulier : Listez les demandes d'adhésion des particuliers.</li>
+	</ul>
+
+	<h3>Notification :</h3>
+	<ul>
+		<li>Notification : Ajoutez, modifiez ou supprimez une notification qui sera affichée sur la page d'accueil. (Configurez une date limite.)</li>
+	</ul>
+
+	<h3>Partenaire :</h3>
+	<ul>
+		<li>Partenaire : Gérez les partenaires de l'association.</li>
+	</ul>
+</div>
+
+<hr>
+
+<div class="images">
+	<h2>Images présentes sur le site :</h2>
+
+	<ul class="images__list">
+		<li>
+			<div>
+				<h3>Vague de fond d'écran (haut) :</h3>
+				<a href='/website/Assets/bg-top.svg' download><img src="/website/Assets/bg-top.svg"></a>
+			</div>
+		</li>
+		<li>
+			<div>
+				<h3>Vague de fond d'écran (bas) :</h3>
+				<a href='/website/Assets/bg-btm.svg' download><img src="/website/Assets/bg-btm.svg"></a>
+			</div>
+		</li>
+	</ul>
+
+
+</div>
+
+
+
+
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+$(document).ready(function(){
+});
+</script>
+{% endblock %}

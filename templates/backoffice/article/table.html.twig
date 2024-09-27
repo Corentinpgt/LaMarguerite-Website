@@ -1,0 +1,70 @@
+{# templates/backoffice/article/table.html.twig #}
+
+<div class="table-responsive">
+	<table id="dt_articles" class="table table-striped table-bordered table-hover width-99p">
+		<thead class="thead-dark">
+			<tr>
+				<th>{{ 'eventDate' | trans }} {{ 'Y/m/d' | trans }}</th>
+				<th>{{ 'isPublished?' | trans }}</th>
+				<th>{{ 'title' | trans }}</th>
+				<th>{{ 'website' | trans }}</th>
+				<th>{{ 'facebook' | trans }}</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for article in articles %}
+
+				<tr>
+					<td>
+						{{ article.eventDate | date ('Y/m/d') }}
+					</td>
+					<td>
+						{% if article.isPublished %}
+						{{ 'published' | trans }}
+						{% else %}
+						{{ 'unpublished' | trans }}
+						{% endif %}
+					</td>
+					<td>
+						{{ article.title }}
+					</td>
+
+					<td>
+						{% if article.isPublished %}
+							<a href="javascript:void(0);" class="btn btn-sm btn-edit" onclick="unpublishArticle({{ article.id }})">
+								{{ 'unpublish' | trans }}
+							</a>
+						{% else %}
+							<a href="javascript:void(0);" class="btn btn-sm btn-edit" onclick="publishArticle({{ article.id }})">
+								{{ 'publish' | trans }}
+							</a>
+						{% endif %}
+					</td>
+					<td>
+						{% if article.onFacebook %}
+							<a href="javascript:void(0);" class="btn btn-sm btn-edit" onclick="unpublishFacebook({{ article.id }})">
+								<i class="fas fa-window-close"></i>
+							</a>
+						{% else %}
+							<a href="javascript:void(0);" class="btn btn-sm btn-edit" onclick="publishFacebook({{ article.id }})">
+								<i class="fab fa-facebook-square"></i>
+							</a>
+						{% endif %}
+					</td>
+					<td>
+						<div class="width-75 text-right">
+							<a href="{{ path('article_edit', {'id' : article.id}) }}" class="btn btn-sm btn-edit">
+								<i class="far fa-edit"></i>
+							</a>
+							<a href="javascript:void(0);" class="btn btn-sm btn-delete"
+								onclick="if(confirm('{{ 'confirm.delete' | trans }}')){window.location.href = '{{ path('article_delete', {'id' : article.id}) }}'}">
+								<i class="fas fa-times"></i>
+							</a>
+						</div>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>

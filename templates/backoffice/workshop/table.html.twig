@@ -1,0 +1,36 @@
+{# templates/backoffice/workshop/table.html.twig #}
+
+<div class="table-responsive">
+	<table id="dt_partners" class="table table-striped table-bordered table-hover width-99p">
+		<thead class="thead-dark">
+			<tr>
+				<th>{{ 'name' | trans }}</th>
+				<th>{{ 'contributor' | trans }}</th>
+				<th>{{ 'workshop_cat' | trans }}</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for work in workshop %}
+
+				<tr>
+					<td>{{ work.name }}</td>
+					<td>{{ work.contributor.firstname }}</td>
+					<td>{{ work.workshopCategory.name }}</td>
+					<td>
+						<div class="{#width-75#} text-right">
+							<a href="{{ path('workshop_edit', {'id' : work.id}) }}" class="btn btn-sm btn-edit">
+								<i class="far fa-edit"></i>
+							</a>
+
+							<a href="javascript:void(0);" class="btn btn-sm btn-delete"
+								onclick="if(confirm('{{ 'confirm.delete' | trans }}')){window.location.href = '{{ path('workshop_delete', {'id' : work.id}) }}'}">
+								<i class="fas fa-times"></i>
+							</a>
+						</div>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>

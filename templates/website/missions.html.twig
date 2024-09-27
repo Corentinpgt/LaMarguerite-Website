@@ -1,0 +1,383 @@
+{% extends "website/base.html.twig" %}
+
+{% block title %}Missions & Projets{% endblock %}
+
+
+
+{% block body %}
+    
+    
+    
+<!-- Missions -->
+
+<div class="container missionsmobile">
+	<div class="row">
+		<div class="col-12">
+			<div class="missionsmobile__inner prevention">
+				<h2>Prévention & Suivi Santé</h2>
+				<ul>
+					<li>
+						<h3>Accompagnement et suivi des pathologies chroniques :</h3>
+						<p>Nous offons un accompagnement personnalisé aux personnes atteintes de pathologies chroniques en associant les savoirs scientifiques et les savoirs expérientiels. Ainsi, nous proposons des entretiens individuels de suivi avec :<br><br>- Un médecin bénévole<br>- Une infirmière<br>- Une diététicienne<br>- Un patient expert d’une association partenaire.<br><br>L’objectif est de mieux comprendre sa maladie, d’obtenir une réponse rapide, être informé, orienté dans ses questions du quotidien.<br>Accueil au siège de l’association ou au domicile sur RDV.</p>
+					</li>
+					<li>
+						<h3>Relais de proximité pour les professionnels du médico-social :</h3>
+						<p>Nous mettons nos professionnels de santé et patients ressources à disposition des intervenants opérationnels du médico-social pour toute questions de santé. L’objectif est d’éviter les ruptures de soin et d’amorcer un suivi santé : Entretiens téléphoniques, visio et déplacements possibles.</p>
+					</li>
+					<li>
+						<h3>Aller vers les publics les plus fragiles :</h3>
+						<p>Nous intervenons au plus près des publics fragiles les plus éloignés du système de santé. Nos missions s’étendent de l’information santé, à l’évaluation et au suivi à long terme. Notre approche personnalisée en binôme professionnel/patient ressource et directement au domicile des patients permet de réduire les inégalités d’accès au soin.</p>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="container missionsmobile">
+	<div class="row">
+		<div class="col-12">
+			<div class="missionsmobile__inner aidant">
+				<h2>Aide aux Aidants</h2>
+				<ul>
+					<li>
+						<h3>Qui sont-ils ?</h3>
+						<p>Derriere chaque patient atteint de pathologie chronique se cache un aidant. Une personne non professionnelle qui soutien, accompagne la personne malade. Elle fait partie intégrante de l’environnement du patient et permet souvent le maintien à domicile pour les personnes dépendantes. Ce rôle, si naturel pour les proches, est souvent éprouvant et peut avoir des répercutions sur la santé physique et mentale de l’aidant lui-même.</p>
+					</li>
+					<li>
+						<h3>Sensibiliser, Informer, Identifier :</h3>
+						<p>L’un de nos objectifs prioritaire est d’apporter de l’information sur le rôle d’aidant. Nous intervenons en entreprises, collectivités, universités etc.. pour sensibiliser sur la reconnaissance de ce statut. Des solutions existent. Pour bénéficier d’une intervention au sein de votre structure : <a class="missions__contact" href="/contact">Contactez-nous</a>.</p>
+					</li>
+					<li>
+						<h3>Accompagnement, information Santé et groupes de paroles :</h3>
+						<p>Nous proposons aux proches aidants un accompagnement :<br><br>- Accueil, écoute et relai<br>- Entretien Santé (Infirmière ou médecin)<br>- Explication détaillée de la pathologie de la personne aidée<br>- Propositions d’ateliers et groupes de paroles</p>
+					</li>
+					<li>
+						<h3>Répit d’urgence et journées de répit :</h3>
+						<p>Le besoin de répit des aidants est aujourd’hui bien documenté. Il permet de prévenir l’épuisement, de maintenir une santé mentale et physique, d’améliorer la qualité des soins, de garantir une vie sociale et éviter l’isolement. <br><br>Envie de profiter d’un moment de répit ? <a class="missions__contact" href="/contact">Contactez-nous</a>.<br><span onclick="scrollToProjects()">Découvrez ces différents projets</span></p>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container missionsmobile">
+	<div class="row">
+		<div class="col-12">
+			<div class="missionsmobile__inner innovation">
+				<h2>Innovation santé</h2>
+				<ul>
+					<li>
+						<p>L’innovation est un des fondements de La Marguerite. Nous avons à coeur de participer et d’initier différents projets expérimentaux à destination des patients.</p>
+					</li>
+					<li>
+						<h3>Initier des projets de recherche :</h3>
+						<p>L’expérience patient de nos adhérents, premiers bénéficiaires des outils et services du système de Santé, nous permet d’identifier des besoins généraux et spécifiques non résolus. Si aucune solution n’est disponible sur le marché ou en cours d’expérimentation, nous construisons, de manière partenariale, un projet expérimental visant à répondre au besoin exprimé.</p>
+					</li>
+					<li>
+						<h3>Accès facilité aux patients :</h3>
+						<p>Avec une représentation de plus de 3000 patients, nous pouvons faciliter le recrutement et l’engagement de groupes de patients pour des expérimentations, essais cliniques et études de recherche.</p>
+					</li>
+					<li>
+						<h3>Confrontation marché Startups :</h3>
+						<p>Dans une démarche collaborative, nous proposons aux porteurs de projets de confronter leur innovation dans le domaine de la santé directement auprès des patients utilisateurs. Un compte-rendu cette confrontation est délivré et sert intelligement l’évolution et la valorisation du projet.</p>
+					</li>
+				</ul>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div id="container_missions" class="container missions">
+	<div class="row">
+		<div class="col-12 prevention">
+			<h1>Prévention & Suivi Santé</h1>
+			<ul class="missions__content">
+				<li>
+					<h2>Accompagnement et suivi des pathologies chroniques :</h2>
+					<p>Nous offons un accompagnement personnalisé aux personnes atteintes de pathologies chroniques en associant les savoirs scientifiques et les savoirs expérientiels. Ainsi, nous proposons des entretiens individuels de suivi avec :<br><br>- Un médecin bénévole<br>- Une infirmière<br>- Une diététicienne<br>- Un patient expert d’une association partenaire.<br><br>L’objectif est de mieux comprendre sa maladie, d’obtenir une réponse rapide, être informé, orienté dans ses questions du quotidien.<br>Accueil au siège de l’association ou au domicile sur RDV.</p>
+				</li>
+				<li>
+					<h2>Relais de proximité pour les professionnels du médico-social :</h2>
+					<p>Nous mettons nos professionnels de santé et patients ressources à disposition des intervenants opérationnels du médico-social pour toute questions de santé. L’objectif est d’éviter les ruptures de soin et d’amorcer un suivi santé : Entretiens téléphoniques, visio et déplacements possibles.</p>
+				</li>
+				<li>
+					<h2>Aller vers les publics les plus fragiles :</h2>
+					<p>Nous intervenons au plus près des publics fragiles les plus éloignés du système de santé. Nos missions s’étendent de l’information santé, à l’évaluation et au suivi à long terme. Notre approche personnalisée en binôme professionnel/patient ressource et directement au domicile des patients permet de réduire les inégalités d’accès au soin.</p>
+				</li>
+			</ul>
+
+			<ul class="missions__nav">
+				<li>
+					<button data-id="0" class="mission_btn missions-selected">Prévention Santé</button>
+				</li>
+				<li>
+					<button data-id="1" class="mission_btn">Aide aux Aidants</button>
+				</li>
+				<li>
+					<button data-id="2" class="mission_btn">Innovation Santé</button>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+</div>
+
+<template class="temp__mission" id="template__mission-prevention">
+	<div class="row">
+		<div class="col-12 prevention">
+			<h1>Prévention & Suivi Santé</h1>
+			<ul class="missions__content">
+				<li>
+					<h2>Accompagnement et suivi des pathologies chroniques :</h2>
+					<p>Nous offons un accompagnement personnalisé aux personnes atteintes de pathologies chroniques en associant les savoirs scientifiques et les savoirs expérientiels. Ainsi, nous proposons des entretiens individuels de suivi avec :<br><br>- Un médecin bénévole<br>- Une infirmière<br>- Une diététicienne<br>- Un patient expert d’une association partenaire.<br><br>L’objectif est de mieux comprendre sa maladie, d’obtenir une réponse rapide, être informé, orienté dans ses questions du quotidien.<br>Accueil au siège de l’association ou au domicile sur RDV.</p>
+				</li>
+				<li>
+					<h2>Relais de proximité pour les professionnels du médico-social :</h2>
+					<p>Nous mettons nos professionnels de santé et patients ressources à disposition des intervenants opérationnels du médico-social pour toute questions de santé. L’objectif est d’éviter les ruptures de soin et d’amorcer un suivi santé : Entretiens téléphoniques, visio et déplacements possibles.</p>
+				</li>
+				<li>
+					<h2>Aller vers les publics les plus fragiles :</h2>
+					<p>Nous intervenons au plus près des publics fragiles les plus éloignés du système de santé. Nos missions s’étendent de l’information santé, à l’évaluation et au suivi à long terme. Notre approche personnalisée en binôme professionnel/patient ressource et directement au domicile des patients permet de réduire les inégalités d’accès au soin.</p>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+</template>
+
+
+<template class="temp__mission" id="template__mission-aidant">
+	<div class="row">
+		<div class="col-12 aidant">
+			<h1>Aide aux Aidants</h1>
+			<ul class="missions__content">
+				<li>
+					<h2>Qui sont-ils ?</h2>
+					<p>Derriere chaque patient atteint de pathologie chronique se cache un aidant. Une personne non professionnelle qui soutien, accompagne la personne malade. Elle fait partie intégrante de l’environnement du patient et permet souvent le maintien à domicile pour les personnes dépendantes. Ce rôle, si naturel pour les proches, est souvent éprouvant et peut avoir des répercutions sur la santé physique et mentale de l’aidant lui-même.</p>
+				</li>
+				<li>
+					<h2>Sensibiliser, Informer, Identifier :</h2>
+					<p>L’un de nos objectifs prioritaire est d’apporter de l’information sur le rôle d’aidant. Nous intervenons en entreprises, collectivités, universités etc.. pour sensibiliser sur la reconnaissance de ce statut. Des solutions existent. Pour bénéficier d’une intervention au sein de votre structure : <a class="missions__contact" href="/contact">Contactez-nous</a>.</p>
+				</li>
+				<li>
+					<h2>Accompagnement, information Santé et groupes de paroles :</h2>
+					<p>Nous proposons aux proches aidants un accompagnement :<br><br>- Accueil, écoute et relai<br>- Entretien Santé (Infirmière ou médecin)<br>- Explication détaillée de la pathologie de la personne aidée<br>- Propositions d’ateliers et groupes de paroles</p>
+				</li>
+				<li>
+					<h2>Répit d’urgence et journées de répit :</h2>
+					<p>Le besoin de répit des aidants est aujourd’hui bien documenté. Il permet de prévenir l’épuisement, de maintenir une santé mentale et physique, d’améliorer la qualité des soins, de garantir une vie sociale et éviter l’isolement. <br><br>Envie de profiter d’un moment de répit ? <a class="missions__contact" href="/contact">Contactez-nous</a>.<br><span onclick="scrollToProjects()">Découvrez ces différents projets</span></p>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+</template>
+
+
+<template class="temp__mission" id="template__mission-innovation">
+	<div class="row">
+		<div class="col-12 innovation">
+			<h1>Innovation en santé</h1>
+			<ul class="missions__content">
+				<li>
+					<p>L’innovation est un des fondements de La Marguerite. Nous avons à coeur de participer et d’initier différents projets expérimentaux à destination des patients.</p>
+				</li>
+				<li>
+					<h2>Initier des projets de recherche :</h2>
+					<p>L’expérience patient de nos adhérents, premiers bénéficiaires des outils et services du système de Santé, nous permet d’identifier des besoins généraux et spécifiques non résolus. Si aucune solution n’est disponible sur le marché ou en cours d’expérimentation, nous construisons, de manière partenariale, un projet expérimental visant à répondre au besoin exprimé.</p>
+				</li>
+				<li>
+					<h2>Accès facilité aux patients :</h2>
+					<p>Avec une représentation de plus de 3000 patients, nous pouvons faciliter le recrutement et l’engagement de groupes de patients pour des expérimentations, essais cliniques et études de recherche.</p>
+				</li>
+				<li>
+					<h2>Confrontation marché Startups :</h2>
+					<p>Dans une démarche collaborative, nous proposons aux porteurs de projets de confronter leur innovation dans le domaine de la santé directement auprès des patients utilisateurs. Un compte-rendu cette confrontation est délivré et sert intelligement l’évolution et la valorisation du projet.</p>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+</template>
+
+<ul id="missions_nav" class="missions__nav nav__none">
+	<li>
+		<button data-id="0" class="mission_btn">Prévention Santé</button>
+	</li>
+	<li>
+		<button data-id="1" class="mission_btn">Aide aux Aidants</button>
+	</li>
+	<li>
+		<button data-id="2" class="mission_btn">Innovation Santé</button>
+	</li>
+</ul>
+
+<div id="scroll_projects"></div>
+
+
+<!-- Projects -->
+
+
+<div  class="container projects">
+	<div class="row">
+		<div class="col">
+			<h2 class="projects__title">Les projets en cours</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+
+
+			{% set side = false %}
+			{% for project in projects %}
+
+				{% if side == false %}
+					{% set side = true %}
+
+						<div class="container projectCard">
+							<div class="row">
+
+								<div class="col-12 col-lg-8">
+									<h2>{{project.name}}</h2>
+									<p>{{project.description|nl2br}}</p>
+								</div>
+
+								<div class="col-12 col-lg-4">
+									<div class="projectCard__extra">
+										<img src="/assets/images/{{project.img.id}}.{{project.img.extension}}" class="d-block w-100" alt="image du projet : {{project.name}}">
+										{% if project.link == null %}
+										{% else %}
+										<a href="{{project.link}}"><button class="projectCard__btn">{{project.linkLabel}}</button></a>
+										{% endif %}
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+				{% else %}
+					{% set side = false %}
+
+					<div class="container projectCard">
+						<div class="row">
+
+							<div class="col-12 col-lg-4">
+								<div class="projectCard__extra-reverse">
+									<img src="/assets/images/{{project.img.id}}.{{project.img.extension}}" class="d-block w-100" alt="image du projet : {{project.name}}">
+									{% if project.link == null %}
+									{% else %}
+									<a href="{{project.link}}"><button class="projectCard__btn">{{project.linkLabel}}</button></a>
+									{% endif %}
+								</div>
+							</div>
+
+							<div class="col-12 col-lg-8">
+								<h2>{{project.name}}</h2>
+								<p>{{project.description|nl2br}}</p>
+							</div>
+
+						</div>
+					</div>
+
+				{% endif %}
+			{% endfor %}
+
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block javascripts %}
+<script>
+
+
+	// If we come frome the home page, using the button of the lightMissions
+	if (getCookie('scrollProject') != null) {
+		$('html, body').animate({
+			scrollTop: $('#scroll_projects').offset().top
+		}, 1000);
+		deleteCookie('scrollProject');
+	}
+
+	// Scroll to projects smoothly
+	function scrollToProjects() {
+		$('html, body').animate({
+			scrollTop: $('#scroll_projects').offset().top
+		}, 'slow');
+	}
+
+	// Get template, nav & container
+	let missions = $('.temp__mission');
+	let container = $('#container_missions');
+	let nav = $('#missions_nav');
+
+	function handlerMission(ev) {
+
+		// Template the mission using the data-id of the nav
+
+		let target = $(ev.target);
+		let id = target.data('id');
+		let mission = missions[id];
+		container.html(mission.innerHTML);
+
+		// Add Navigation
+
+		var row = container.find('.row');
+		nav.removeClass('nav__none');
+		row.append(nav);
+
+
+		// Add style on the clicked btn
+
+		let buttons = $('.mission_btn');
+		buttons.each(function() {
+			let btn = $(this);
+			if (id === btn.data('id')) {
+				btn.addClass('missions-selected');
+			}
+			else {
+				btn.removeClass('missions-selected');
+			}
+		});
+
+		listerner();
+	}
+
+	function listerner() {
+
+		// If desktop, then we show the desktop version of the missions
+
+		if ($(window).width() > 768) {
+			nav.css('display', 'flex');
+			let buttons = $('.mission_btn');
+			buttons.each(function() {
+				$(this).on("click", handlerMission);
+			});
+		}
+		else {
+			nav.css('display', 'none');
+		}
+	}
+
+	listerner();
+
+	$(window).on('resize', listerner);
+</script>
+
+{% endblock %}

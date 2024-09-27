@@ -1,0 +1,30 @@
+{# templates/backoffice/libs_summernote/script.js.twig #}
+
+<script>
+function summernoteInit()
+{
+	$('#summernote').summernote({
+		height: 300,
+		toolbar:[
+			['style', ['bold', 'italic', 'underline']],
+			['fontsize', ['fontsize']],
+			['color', ['color']],
+			['height', ['height']],
+			['insert', ['link']],
+			['view', ['fullscreen']],['misc', ['codeview']],
+			['highlight', ['highlight']]
+		],
+		popover: {
+			image: [],
+			link: [],
+			air: []
+		}
+	});
+}
+
+function getSummernoteData()
+{
+	var info = $('#summernote').summernote('code');
+	return info;
+}
+</script>
