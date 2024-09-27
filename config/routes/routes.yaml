@@ -1,0 +1,633 @@
+#----------------------------------------------------------------------
+# Website
+
+login:
+    path: /login
+    controller: App\Controller\LoginController:index
+
+home:
+    path: /
+    controller: App\Controller\website\WebsiteController:home
+
+
+
+#-- All the pages :
+
+legal:
+    path: /legal
+    controller: App\Controller\website\WebsiteController:legal
+
+missions:
+    path: /missions
+    controller: App\Controller\website\WebsiteController:missions
+
+
+equipe:
+    path: /equipe
+    controller: App\Controller\website\WebsiteController:equipe
+
+
+adherents:
+    path: /adherents
+    controller: App\Controller\website\WebsiteController:adherents
+
+
+ateliers:
+    path: /ateliers
+    controller: App\Controller\website\WebsiteController:ateliers
+
+
+actualites:
+    path: /actualites
+    controller: App\Controller\website\WebsiteController:actualites
+
+
+adhesions:
+    path: /adhesions
+    controller: App\Controller\website\WebsiteController:adhesions
+
+
+adhesion_asso:
+    path: /adhesions/formulaire/asso
+    controller: App\Controller\website\WebsiteController:membershipAsso
+
+adhesion_indi:
+    path: /adhesions/formulaire/indi
+    controller: App\Controller\website\WebsiteController:membershipIndi
+
+contact:
+    path: /contact
+    controller: App\Controller\website\WebsiteController:contact
+
+#----------------------------------------------------------------------
+# Behind the Firewall
+
+logout:
+    path: /logout
+    methods: GET
+
+#----------------------------------------------------------------------
+# Dashboard
+
+dashboard:
+    path: /nexus/
+    controller: App\Controller\DashboardController::dashboard
+
+
+#----------------------------------------------------------------------
+# Facebook
+
+
+facebook_publish:
+    path: /nexus/facebook/publish/
+    controller: App\Controller\FacebookController:publish
+
+
+facebook_unpublish:
+    path: /nexus/facebook/unpublish/
+    controller: App\Controller\FacebookController:unpublish
+
+#----------------------------------------------------------------------
+# Image
+
+image_get:
+    path: /api/image/{id}
+    controller: App\Controller\ImageController:showImage
+
+
+
+#----------------------------------------------------------------------
+# User
+
+user_dashboard:
+    path: /nexus/user/dashboard
+    controller: App\Controller\UserController::dashboard
+
+user_add:
+    path: /nexus/user/add
+    controller: App\Controller\UserController::add
+
+user_edit:
+    path: /nexus/user/{id}/edit
+    controller: App\Controller\UserController::edit
+    requirements:
+        id: \d+
+
+user_edit_password:
+    path: /nexus/user/{id}/edit/password
+    controller: App\Controller\UserController::editPassword
+    requirements:
+        id: \d+
+
+user_delete:
+    path: /nexus/user/{id}/delete
+    controller: App\Controller\UserController::delete
+    requirements:
+        id: \d+
+#----------------------------------------------------------------------
+# News
+
+article_dashboard:
+    path: /nexus/article/dashboard
+    controller: App\Controller\ArticleController::dashboard
+
+article_add:
+    path: /nexus/article/add
+    controller: App\Controller\ArticleController::add
+
+article_edit:
+    path: /nexus/article/{id}/edit
+    controller: App\Controller\ArticleController::edit
+    requirements:
+        id: \d+
+
+article_preview:
+    path: /nexus/article/{id}/preview
+    controller: App\Controller\ArticleController::preview
+    requirements:
+        id: \d+
+
+article_delete:
+    path: /nexus/article/{id}/delete
+    controller: App\Controller\ArticleController::delete
+    requirements:
+        id: \d+
+
+article_publish:
+    path: /nexus/article/publish
+    controller: App\Controller\ArticleController::publish
+
+article_unpublish:
+    path: /nexus/article/unpublish
+    controller: App\Controller\ArticleController::unpublish
+
+#----------------------------------------------------------------------
+# News Search
+
+article_search_content:
+    path: /api/search/article/content
+    controller: App\Controller\ArticleController::searchByContent
+
+
+
+#----------------------------------------------------------------------
+# Event
+
+event_dashboard:
+    path: /nexus/event/dashboard
+    controller: App\Controller\EventController::dashboard
+
+event_add:
+    path: /nexus/event/add
+    controller: App\Controller\EventController::add
+
+event_edit:
+    path: /nexus/event/{id}/edit
+    controller: App\Controller\EventController::edit
+    requirements:
+        id: \d+
+
+event_delete:
+    path: /nexus/event/{id}/delete
+    controller: App\Controller\EventController::delete
+    requirements:
+        id: \d+
+
+
+
+#----------------------------------------------------------------------
+# Project
+
+project_dashboard:
+    path: /nexus/project/dashboard
+    controller: App\Controller\ProjectController::dashboard
+
+project_add:
+    path: /nexus/project/add
+    controller: App\Controller\ProjectController::add
+
+project_edit:
+    path: /nexus/project/{id}/edit
+    controller: App\Controller\ProjectController::edit
+    requirements:
+        id: \d+
+
+project_delete:
+    path: /nexus/project/{id}/delete
+    controller: App\Controller\ProjectController::delete
+    requirements:
+        id: \d+
+
+
+
+
+
+#----------------------------------------------------------------------
+# Partner
+
+partner_dashboard:
+    path: /nexus/partner/dashboard
+    controller: App\Controller\PartnerController::dashboard
+
+partner_add:
+    path: /nexus/partner/add
+    controller: App\Controller\PartnerController::add
+
+partner_edit:
+    path: /nexus/partner/{id}/edit
+    controller: App\Controller\PartnerController::edit
+    requirements:
+        id: \d+
+
+partner_delete:
+    path: /nexus/partner/{id}/delete
+    controller: App\Controller\PartnerController::delete
+    requirements:
+        id: \d+
+
+
+#----------------------------------------------------------------------
+# Workshop
+
+workshop_dashboard:
+    path: /nexus/workshop/dashboard
+    controller: App\Controller\WorkshopController::dashboard
+
+workshop_add:
+    path: /nexus/workshop/add
+    controller: App\Controller\WorkshopController::add
+
+workshop_edit:
+    path: /nexus/workshop/{id}/edit
+    controller: App\Controller\WorkshopController::edit
+    requirements:
+        id: \d+
+
+workshop_delete:
+    path: /nexus/workshop/{id}/delete
+    controller: App\Controller\WorkshopController::delete
+    requirements:
+        id: \d+
+
+#-- Workshop cat :
+
+workshop_cat_dashboard:
+    path: /nexus/workshop_cat/dashboard
+    controller: App\Controller\WorkshopCatController::dashboard
+
+workshop_cat_add:
+    path: /nexus/workshop_cat/add
+    controller: App\Controller\WorkshopCatController::add
+
+workshop_cat_edit:
+    path: /nexus/workshop_cat/{id}/edit
+    controller: App\Controller\WorkshopCatController::edit
+    requirements:
+        id: \d+
+
+workshop_cat_delete:
+    path: /nexus/workshop_cat/{id}/delete
+    controller: App\Controller\WorkshopCatController::delete
+    requirements:
+        id: \d+
+
+
+#----------------------------------------------------------------------
+# Workshop Search
+
+workshop_search_category:
+    path: /api/search/workshop/category
+    controller: App\Controller\WorkshopController::searchByCat
+
+workshop_search_content:
+    path: /api/search/workshop/content
+    controller: App\Controller\WorkshopController::searchByContent
+
+
+#----------------------------------------------------------------------
+# Workshop Planning
+
+workshop_planning_dashboard:
+    path: /nexus/workshop/planning
+    controller: App\Controller\WorkshopController::uploadPlanning
+
+
+
+
+#----------------------------------------------------------------------
+# Contributor
+
+contributor_dashboard:
+    path: /nexus/contributor/dashboard
+    controller: App\Controller\ContributorController::dashboard
+
+contributor_add:
+    path: /nexus/contributor/add
+    controller: App\Controller\ContributorController::add
+
+contributor_edit:
+    path: /nexus/contributor/{id}/edit
+    controller: App\Controller\ContributorController::edit
+    requirements:
+        id: \d+
+
+contributor_delete:
+    path: /nexus/contributor/{id}/delete
+    controller: App\Controller\ContributorController::delete
+    requirements:
+        id: \d+
+
+
+
+
+#----------------------------------------------------------------------
+# Image
+
+image_view:
+    path: /nexus/image/{id}/view
+    controller: App\Controller\ImageController::view
+    requirements:
+        id: \d+
+
+image_add_dropzone:
+    path: /nexus/image/add/dropzone
+    controller: App\Controller\ImageController::addDropzone
+
+image_remove_dropzone:
+    path: /nexus/image/remove/dropzone
+    controller: App\Controller\ImageController::removeDropzone
+
+
+
+#----------------------------------------------------------------------
+# Notification
+
+notification_dashboard:
+    path: /nexus/notification/dashboard
+    controller: App\Controller\NotificationController::dashboard
+
+notification_add:
+    path: /nexus/notification/add
+    controller: App\Controller\NotificationController::add
+
+notification_edit:
+    path: /nexus/notification/{id}/edit
+    controller: App\Controller\NotificationController::edit
+    requirements:
+        id: \d+
+
+notification_delete:
+    path: /nexus/notification/{id}/delete
+    controller: App\Controller\NotificationController::delete
+    requirements:
+        id: \d+
+
+
+
+#----------------------------------------------------------------------
+# Membership Association
+
+membership_asso_dashboard:
+    path: /nexus/membership_asso/dashboard
+    controller: App\Controller\MembershipAssoController::dashboard
+
+membership_asso_add:
+    path: /nexus/membership_asso/add
+    controller: App\Controller\MembershipAssoController::add
+
+membership_asso_view:
+    path: /nexus/membership_asso/{id}/view
+    controller: App\Controller\MembershipAssoController::view
+    requirements:
+        id: \d+
+
+membership_asso_delete:
+    path: /nexus/membership_asso/{id}/delete
+    controller: App\Controller\MembershipAssoController::delete
+    requirements:
+        id: \d+
+
+membership_asso_form:
+    path: /nexus/membership_asso/form
+    controller: App\Controller\website\WebsiteController::membership
+
+#----------------------------------------------------------------------
+# Membership Individual
+
+membership_indi_dashboard:
+    path: /nexus/membership_indi/dashboard
+    controller: App\Controller\MembershipIndiController::dashboard
+
+
+membership_indi_add:
+    path: /nexus/membership_indi/add
+    controller: App\Controller\MembershipIndiController::add
+
+
+membership_indi_view:
+    path: /nexus/membership_indi/{id}/view
+    controller: App\Controller\MembershipIndiController::view
+    requirements:
+        id: \d+
+
+membership_indi_delete:
+    path: /nexus/membership_indi/{id}/delete
+    controller: App\Controller\MembershipIndiController::delete
+    requirements:
+        id: \d+
+
+
+
+#----------------------------------------------------------------------
+# Contact
+
+contact_dashboard:
+    path: /nexus/contact/dashboard
+    controller: App\Controller\ContactController::dashboard
+
+
+contact_view:
+    path: /nexus/contact/{id}/view
+    controller: App\Controller\ContactController::view
+    requirements:
+        id: \d+
+
+contact_valid:
+    path: /nexus/contact/{id}/valid
+    controller: App\Controller\ContactController::valid
+    requirements:
+        id: \d+
+
+contact_unvalid:
+    path: /nexus/contact/{id}/unvalid
+    controller: App\Controller\ContactController::unvalid
+    requirements:
+        id: \d+
+
+contact_delete:
+    path: /nexus/contact/{id}/delete
+    controller: App\Controller\ContactController::delete
+    requirements:
+        id: \d+
+
+
+
+#----------------------------------------------------------------------
+# Members Association
+
+members_asso_dashboard:
+    path: /nexus/members_asso/dashboard
+    controller: App\Controller\MembersAssoController::dashboard
+
+members_asso_add:
+    path: /nexus/members_asso/add
+    controller: App\Controller\MembersAssoController::add
+
+members_asso_edit:
+    path: /nexus/members_asso/{id}/edit
+    controller: App\Controller\MembersAssoController::edit
+    requirements:
+        id: \d+
+
+members_asso_view:
+    path: /nexus/members_asso/{id}/view
+    controller: App\Controller\MembersAssoController::view
+    requirements:
+        id: \d+
+
+members_asso_delete:
+    path: /nexus/members_asso/{id}/delete
+    controller: App\Controller\MembersAssoController::delete
+    requirements:
+        id: \d+
+
+
+
+#----------------------------------------------------------------------
+# Members Individual
+
+members_indi_dashboard:
+    path: /nexus/members_indi/dashboard
+    controller: App\Controller\MembersIndiController::dashboard
+
+members_indi_add:
+    path: /nexus/members_indi/add
+    controller: App\Controller\MembersIndiController::add
+
+members_indi_edit:
+    path: /nexus/members_indi/{id}/edit
+    controller: App\Controller\MembersIndiController::edit
+    requirements:
+        id: \d+
+
+members_indi_view:
+    path: /nexus/members_indi/{id}/view
+    controller: App\Controller\MembersIndiController::view
+    requirements:
+        id: \d+
+
+members_indi_delete:
+    path: /nexus/members_indi/{id}/delete
+    controller: App\Controller\MembersIndiController::delete
+    requirements:
+        id: \d+
+
+
+
+#----------------------------------------------------------------------
+# Members Stats
+
+members_stats_dashboard:
+    path: /nexus/members_stats/dashboard
+    controller: App\Controller\MembersStatsController::dashboard
+
+members_stats_search:
+    path: /nexus/search/members
+    controller: App\Controller\MembersStatsController::searchYear
+
+
+
+
+#----------------------------------------------------------------------
+# Employees
+
+
+employee_dashboard:
+    path: /nexus/employee/dashboard
+    controller: App\Controller\EmployeeController::dashboard
+
+employee_add:
+    path: /nexus/employee/add
+    controller: App\Controller\EmployeeController::add
+
+employee_edit:
+    path: /nexus/employee/{id}/edit
+    controller: App\Controller\EmployeeController::edit
+    requirements:
+        id: \d+
+
+employee_delete:
+    path: /nexus/employee/{id}/delete
+    controller: App\Controller\EmployeeController::delete
+    requirements:
+        id: \d+
+
+
+
+#----------------------------------------------------------------------
+# Pathologys
+
+
+pathology_dashboard:
+    path: /nexus/pathology/dashboard
+    controller: App\Controller\PathologyController::dashboard
+
+pathology_add:
+    path: /nexus/pathology/add
+    controller: App\Controller\PathologyController::add
+
+pathology_edit:
+    path: /nexus/pathology/{id}/edit
+    controller: App\Controller\PathologyController::edit
+    requirements:
+        id: \d+
+
+pathology_delete:
+    path: /nexus/pathology/{id}/delete
+    controller: App\Controller\PathologyController::delete
+    requirements:
+        id: \d+
+
+
+
+
+
+#----------------------------------------------------------------------
+# Patients
+
+
+patient_dashboard:
+    path: /nexus/patient/dashboard
+    controller: App\Controller\PatientController::dashboard
+
+patient_add:
+    path: /nexus/patient/add
+    controller: App\Controller\PatientController::add
+
+patient_edit:
+    path: /nexus/patient/{id}/edit
+    controller: App\Controller\PatientController::edit
+    requirements:
+        id: \d+
+
+patient_view:
+    path: /nexus/patient/{id}/view
+    controller: App\Controller\PatientController::view
+    requirements:
+        id: \d+
+
+patient_delete:
+    path: /nexus/patient/{id}/delete
+    controller: App\Controller\PatientController::delete
+    requirements:
+        id: \d+
